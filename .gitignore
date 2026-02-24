@@ -1,0 +1,25 @@
+# Environment variables
+.env
+
+# Python cache and virtual environments
+__pycache__/
+venv/
+
+# IDE/editor
+.vscode/
+.idea/
+.DS_Store
+
+# OS
+Thumbs.db
+
+# Flask
+instance/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log

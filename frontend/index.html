@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLS Virtual Advisor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+        }
+        .header {
+            background-color: #13294B; /* UIUC Blue */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            font-weight: bold;
+            border-bottom: 4px solid #E84A27; /* UIUC Orange */
+        }
+        .header img.logo {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .greeting {
+            background: #e2e8f0;
+            color: #13294B;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            text-align: center;
+        }
+        .examples {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 10px 18px;
+            margin-bottom: 15px;
+            font-size: 0.98em;
+            color: #333;
+        }
+        .examples-title {
+            font-weight: bold;
+            color: #13294B;
+            margin-bottom: 6px;
+        }
+        .example-question {
+            background: #e2e8f0;
+            border-radius: 5px;
+            padding: 7px 12px;
+            margin: 4px 0;
+            cursor: pointer;
+            color: #13294B;
+            transition: background 0.2s;
+        }
+        .example-question:hover {
+            background: #dbeafe;
+        }
+        .dots {
+            display: inline-block;
+            width: 30px;
+            height: 18px;
+            vertical-align: middle;
+        }
+        .dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin: 0 2px;
+            background: #888;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: blink 1.4s infinite both;
+        }
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        @keyframes blink {
+            0%, 80%, 100% { opacity: 0.5; }
+            40% { opacity: 1; }
+        }
+        .chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 8px;
+            line-height: 1.4;
+        }
+        .user-msg {
+            background-color: #E84A27; /* Orange */
+            color: white;
+            align-self: flex-end;
+        }
+        .bot-msg {
+            background-color: #e2e8f0;
+            color: #333;
+            align-self: flex-start;
+        }
+        .input-area {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        button {
+            background-color: #13294B;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background-color: #0f203b; }
+        .loading {
+            align-self: flex-start;
+            color: #888;
+            font-style: italic;
+            display: none;
+        }
+        .loading.dots {
+            display: inline-block;
+            margin-left: 8px;
+            color: #888;
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #888;
+            margin: 0 3px;
+            animation: dot-bounce 1.4s infinite ease-in-out;
+        }
+        .typing-indicator {
+            background-color: #e2e8f0;
+            color: #333;
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            min-width: 60px;
+            min-height: 28px;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="header">
+        <img src="./uiuc_logo.png" alt="UIUC Logo" class="logo">
+        BLS Virtual Advisor
+    </div>
+    <div class="greeting">
+        Welcome to the University of Illinois Bachelor of Liberal Studies (BLS) information assistant! I am here to help you explore how our 100% online program can fit into your life.
+        Whether you are curious about tuition, transfer credits, or course flexibility, feel free to ask me anything.
+    </div>
+    <div class="examples">
+        <div class="examples-title">Example questions:</div>
+        <div class="example-question" onclick="setExample('How much does the BLS program cost?')">How much does the BLS program cost?</div>
+        <div class="example-question" onclick="setExample('I work full-time. Can I still complete this degree?')">I work full-time. Can I still complete this degree?</div>
+        <div class="example-question" onclick="setExample('What kind of classes will I take?')">What kind of classes will I take?</div>
+        <div class="example-question" onclick="setExample('How do I apply for the next semester?')">How do I apply for the next semester?</div>
+    </div>
+    <div class="chat-box" id="chat-box">
+        <!-- Initial bot greeting is now handled by JavaScript -->
+    </div>
+    <div class="loading" id="loading-indicator" style="display:none;">
+        <span class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </span>
+        <span style="margin-left:8px;">The advisor is responding...</span>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="Ask about tuition, transfers, courses..." onkeypress="handleEnter(event)">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    // Include marked.js to render Markdown returned by the LLM
+    const script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/marked/marked.min.js";
+    document.head.appendChild(script);
+
+    const chatBox = document.getElementById('chat-box');
+    const userInput = document.getElementById('user-input');
+    const loadingIndicator = document.getElementById('loading-indicator');
+
+    // Initial bot greeting
+    appendMessage("Hello! I am the BLS Virtual Advisor. How can I help you today?", 'bot-msg');
+
+    function handleEnter(e) {
+        if (e.key === 'Enter') sendMessage();
+    }
+
+    function setExample(text) {
+        userInput.value = text;
+        userInput.focus();
+    }
+
+    function showTypingIndicator() {
+        // Add a typing indicator styled like iMessage
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message bot-msg typing-indicator';
+        typingDiv.innerHTML = '<span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>';
+        chatBox.appendChild(typingDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        return typingDiv;
+    }
+
+    function removeTypingIndicator(typingDiv) {
+        if (typingDiv && typingDiv.parentNode) {
+            typingDiv.parentNode.removeChild(typingDiv);
+        }
+    }
+
+    async function sendMessage() {
+        const text = userInput.value.trim();
+        if (!text) return;
+
+        appendMessage(text, 'user-msg');
+        userInput.value = '';
+
+        // Show iMessage-style typing indicator
+        const typingDiv = showTypingIndicator();
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/ask', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: text })
+            });
+
+            const data = await response.json();
+            removeTypingIndicator(typingDiv);
+
+            if (data.answer) {
+                appendMessage(marked.parse(data.answer), 'bot-msg', true);
+            } else {
+                appendMessage("Sorry, I encountered an error.", 'bot-msg');
+            }
+        } catch (error) {
+            removeTypingIndicator(typingDiv);
+            appendMessage("Error connecting to the server. Make sure the Python backend is running.", 'bot-msg');
+        }
+    }
+
+    function appendMessage(content, className, isHTML = false) {
+        const div = document.createElement('div');
+        div.className = `message ${className}`;
+        if (isHTML) {
+            div.innerHTML = content;
+        } else {
+            div.textContent = content;
+        }
+        chatBox.appendChild(div);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+</script>
+
+</body>
+</html>
