@@ -9,10 +9,10 @@ CORS(app)
 # --- CONFIGURATION ---
 UIUC_API_URL = "https://chat.illinois.edu/api/chat-api/chat"
 
-# Your chat.illinois.edu API key
-API_KEY = "uc_cc91bdd73f4b497da3f0b0c73915ff06"
-
-COURSE_NAME = "bls-chatbot-v2"  # Your course name in chat.illinois.edu
+import os
+# Load sensitive config from environment
+API_KEY = os.getenv("UIUC_CHAT_API_KEY")
+COURSE_NAME = os.getenv("COURSE_NAME")
 
 # Using free NCSA-hosted model (no OpenAI key required!)
 MODEL = "Qwen/Qwen2.5-VL-72B-Instruct"  # Free NCSA-hosted model
