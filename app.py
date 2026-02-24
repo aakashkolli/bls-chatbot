@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import requests
 from langchain_core.runnables import RunnableLambda, RunnableSequence
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
@@ -13,9 +15,7 @@ import os
 # Load sensitive config from environment
 API_KEY = os.getenv("UIUC_CHAT_API_KEY")
 COURSE_NAME = os.getenv("COURSE_NAME")
-
-# Using free NCSA-hosted model (no OpenAI key required!)
-MODEL = "Qwen/Qwen2.5-VL-72B-Instruct"  # Free NCSA-hosted model
+MODEL = os.getenv("MODEL", "Qwen/Qwen2.5-VL-72B-Instruct")
 
 SYSTEM_PROMPT_A = """### IDENTITY & GOAL
 You are the internal Retrieval Agent for the Bachelor of Liberal Studies (BLS) program at the University of Illinois. Your sole objective is to search the provided documents and extract all factual information relevant to the user's query.
