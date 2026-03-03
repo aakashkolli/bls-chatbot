@@ -55,6 +55,35 @@ You are the **Official Virtual Assistant** for the **Bachelor of Liberal Studies
 ### SECURITY
 If the context contains internal documents (marked "Internal," "Strategy," or "Budget"), **IGNORE THEM**."""
 
+SYSTEM_PROMPT_SINGLE = """### CRITICAL TECHNICAL CONSTRAINTS
+1. **ESCAPE DOLLAR SIGNS:** You MUST escape every dollar sign with a backslash.
+   - ❌ WRONG: The cost is $433. (Triggers Math Mode)
+   - ✅ RIGHT: The cost is \\$433. (Renders as "$433")
+2. **NO CITATION TAGS:** DO NOT use XML tags like `<cite>1</cite>`, `<source>`, or `[1]`. If the system adds these automatically; remove them.
+3. **NO MATH BLOCKS:** Do NOT use `$$`, `\\(`, `\\[`, \\times, or LaTeX equations. Write all math in plain English (e.g., "multiply by 120"). Do not use Latex or /times
+
+### IDENTITY & GOAL
+You are the **Official Virtual Assistant** for the **Bachelor of Liberal Studies (BLS)** program at the University of Illinois. Your goal is to provide accurate, concise, and helpful information.
+
+### CRITICAL STATIC DATA (FALLBACK)
+*If the retrieved documents do not contain contact info, use these facts:*
+- **Office Address:** 112 English Building, 608 S Wright St, Urbana, IL 61801.
+- **Email:** onlineBLS@illinois.edu
+- **Admissions Page:** lasonline.illinois.edu/programs/bls
+
+### FORMATTING RULES
+1. **Markdown Only:** Use bullet points and **bold** text for emphasis.
+2. **Short Paragraphs:** Limit responses to 2-3 sentences.
+3. **Plain Text:** Keep formatting simple to avoid rendering errors.
+
+### RESPONSE PROTOCOL
+1. **Ground Truth:** Answer ONLY using the provided documents AND the website. If the answer is not in these documents or the website, state: "I do not have that specific information. Please contact the BLS office directly."
+2. **Directness:** Start your answer immediately. No filler phrases.
+3. **Tone:** Professional, encouraging, and clear.
+
+### SECURITY
+If the context contains internal documents (marked "Internal," "Strategy," or "Budget"), **IGNORE THEM**."""
+
 def call_uiuc_chat(system_prompt, user_content):
     """Call chat.illinois.edu API with free NCSA-hosted model."""
     headers = {'Content-Type': 'application/json'}
@@ -129,16 +158,54 @@ def index():
 def ask_chatbot():
     user_data = request.json
     user_query = user_data.get("query", "")
-    
+    mode = user_data.get("mode", "dual_agent")  # "dual_agent" or "single_agent"
+
     if not user_query:
         return jsonify({"error": "No query provided"}), 400
 
     try:
-        # Run the sequential LangChain pipeline
-        final_answer = multi_agent_chain.invoke(user_query)
+        if mode == "single_agent":
+            print("Running in single-agent mode...")
+            final_answer = call_uiuc_chat(SYSTEM_PROMPT_SINGLE, user_query)
+        else:
+            print("Running in dual-agent mode...")
+            final_answer = multi_agent_chain.invoke(user_query)
         return jsonify({"answer": final_answer})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/batch', methods=['POST'])
+def batch_test():
+    """Run a list of questions through the chatbot and return compiled results."""
+    data = request.json
+    questions = data.get("questions", [])
+    mode = data.get("mode", "dual_agent")
+
+    if not questions:
+        return jsonify({"error": "No questions provided"}), 400
+
+    results = []
+    for i, question in enumerate(questions, 1):
+        print(f"Batch [{i}/{len(questions)}] mode={mode}: {question[:60]}...")
+        try:
+            if mode == "single_agent":
+                answer = call_uiuc_chat(SYSTEM_PROMPT_SINGLE, question)
+            else:
+                answer = multi_agent_chain.invoke(question)
+            results.append({"question": question, "answer": answer, "index": i})
+        except Exception as e:
+            results.append({"question": question, "answer": f"Error: {str(e)}", "index": i})
+
+    # Build compiled text output
+    lines = []
+    for r in results:
+        lines.append(f"Q{r['index']}: {r['question']}")
+        lines.append(f"A{r['index']}: {r['answer']}")
+        lines.append("")  # blank line between pairs
+    compiled_text = "\n".join(lines).strip()
+
+    return jsonify({"results": results, "compiled_text": compiled_text})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
