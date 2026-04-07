@@ -1,0 +1,112 @@
+{
+  "da_gpt_gpt": {
+    "Prospective Student Questions|General|1": {
+      "answer": "**The Bachelor of Liberal Studies (BLS) is a fully online, asynchronous degree‑completion program offered by the College of Liberal Arts & Sciences at the University of Illinois Urbana‑Champaign.**  \n\n- It targets adult learners and transfer students who have some college credit but no degree, requiring 120 credit hours that combine core liberal‑arts courses with one of three concentrations: Health and Society, Global Perspectives, or Management Studies.  \n- The curriculum emphasizes critical thinking, communication, data analysis, and cultural competency, preparing graduates for a wide range of careers in education, government, non‑profits, business, and related fields.  \n\nFor more information, you can contact the BLS office at **onlineBLS@illinois.edu** or visit the program’s website at **lasonline.illinois.edu/programs/bls**.",
+      "draft": "- **The Bachelor of Liberal Studies (BLS) is an online, fully asynchronous bachelor’s‑degree‑completion program** offered by the College of Liberal Arts & Sciences at the University of Illinois Urbana‑Champaign.  \n- It is designed for adult learners and transfer students who have some college credit but no degree, providing a flexible, interdisciplinary curriculum of 120 credit hours that includes core liberal‑arts courses and optional concentrations in Health and Society, Global Perspectives, or Management Studies.  \n- The program emphasizes critical thinking, communication, and problem‑solving skills to prepare graduates for diverse careers in fields such as education, government, non‑profits, and business.  ",
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "latency": 120.56,
+      "error": null,
+      "prompt_variant": "original",
+      "question": "What is the Bachelor of Liberal Studies (BLS) degree?",
+      "section": "Prospective Student Questions",
+      "subsection": "General",
+      "num": 1,
+      "key": "Prospective Student Questions|General|1",
+      "timestamp": "2026-03-10T16:25:53"
+    },
+    "Prospective Student Questions|General|2": {
+      "answer": "- **Adult learners** – working professionals, university employees, and others who need a flexible, fully online, asynchronous program to finish a bachelor’s degree.  \n- **Transfer or re‑entry students** – individuals with at least 12 transferable credit hours who have been inactive for two semesters or more and are seeking a degree‑completion pathway.  \n\nThe BLS program offers interdisciplinary coursework and optional concentrations in Health and Society, Global Perspectives, and Management Studies to meet these learners’ needs.",
+      "draft": "- **Adult learners** looking to complete a bachelor’s degree, including working professionals and university employees.  \n- **Transfer or re‑entry students** who have been inactive for at least two semesters and need a flexible, online pathway.  \n- **Degree‑completion students** seeking an interdisciplinary, 100 % asynchronous program that offers concentrations in Health and Society, Global Perspectives, and Management Studies.  ",
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "latency": 36.87,
+      "error": null,
+      "prompt_variant": "original",
+      "question": "Who is the BLS program designed for?",
+      "section": "Prospective Student Questions",
+      "subsection": "General",
+      "num": 2,
+      "key": "Prospective Student Questions|General|2",
+      "timestamp": "2026-03-10T16:26:30"
+    },
+    "Prospective Student Questions|General|3": {
+      "answer": "- **Yes, the Bachelor of Liberal Studies (BLS) is delivered 100 % online and asynchronous**, with all courses available through the university’s online platform. It is designed for adult learners who have completed some college coursework and want a flexible path to finish their degree.",
+      "draft": "- **Yes, the Bachelor of Liberal Studies (BLS) is delivered 100 % online** (asynchronous), with all courses available through the university’s online platform.",
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "latency": 14.21,
+      "error": null,
+      "prompt_variant": "original",
+      "question": "Is the BLS degree fully online?",
+      "section": "Prospective Student Questions",
+      "subsection": "General",
+      "num": 3,
+      "key": "Prospective Student Questions|General|3",
+      "timestamp": "2026-03-10T16:26:46"
+    },
+    "Prospective Student Questions|General|4": {
+      "answer": "**How the Bachelor of Liberal Studies (BLS) differs from other LAS majors**\n\n- **Fully online and asynchronous** – All BLS courses are delivered 100 % online, allowing working adults and degree‑completion students to study on their own schedule, whereas many LAS majors require on‑campus attendance.  \n- **Interdisciplinary core with flexible concentrations** – BLS combines a common liberal‑arts core with three optional concentrations (Health and Society, Global Perspectives, Management Studies), letting students tailor their degree to specific career goals while still sharing many classes with traditional LAS students.  \n- **Designed specifically for adult learners** – The program minimizes prerequisites, provides proactive advising, and includes a dedicated orientation course (LAS 103) and other support services to help transfer and re‑entry students succeed.  \n\nFor personalized advice, contact the BLS office at **onlineBLS@illinois.edu** or visit the admissions page at **lasonline.illinois.edu/programs/bls**.",
+      "draft": "**Key ways the Bachelor of Liberal Studies (BLS) stands out from other LAS majors**\n\n- **Fully online and asynchronous** – All courses are delivered 100 % online, letting working adults and degree‑completion students study on their own schedule, unlike many LAS majors that require on‑campus attendance.  \n- **Interdisciplinary with flexible concentrations** – BLS combines a core liberal‑arts curriculum with three optional concentrations (Health and Society, Global Perspectives, Management Studies), allowing students to tailor their degree to specific career goals while still sharing many classes with traditional LAS students.  \n- **Designed for adult learners** – The program minimizes prerequisites, offers proactive advising, and includes an onboarding course (LAS 103) and a student‑success component to support transfer and re‑entry students, which is not a standard feature of most LAS majors.  \n\nFor more details or personalized advice, contact the BLS office at **onlineBLS@illinois.edu** or visit the admissions page at **lasonline.illinois.edu/programs/bls**.",
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "latency": 19.84,
+      "error": null,
+      "prompt_variant": "original",
+      "question": "How is BLS different from other LAS majors?",
+      "section": "Prospective Student Questions",
+      "subsection": "General",
+      "num": 4,
+      "key": "Prospective Student Questions|General|4",
+      "timestamp": "2026-03-10T16:27:06"
+    },
+    "Prospective Student Questions|Admissions|5": {
+      "answer": "- **Student status:** Only transfer or re‑entry students are eligible; the program does not admit first‑time freshmen.  \n- **Academic criteria:** Minimum of 12 graded, transferable college credit hours (AP and proficiency credits do not count) and a cumulative GPA of 2.0 or higher.  \n- **Application components:** Submit all transcripts, proof of high‑school completion or GED, required essays, and for former UIUC students be inactive for at least two semesters and complete the LAS Re‑Entry Application; international applicants must meet English‑proficiency requirements.  \n\n**Contact:** 112 English Building, 608 S Wright St, Urbana, IL 61801 – Email: onlineBLS@illinois.edu.",
+      "draft": "- **Student status:** Must be a transfer or re‑entry student; the program is not open to first‑time freshmen.  \n- **Academic criteria:** At least 12 graded, transferable college credit hours (AP and proficiency credits do not count) and a cumulative GPA of 2.0 or higher.  \n- **Application components:** Submit all transcripts, proof of high‑school completion or GED, required essays, and meet any additional requirements (e.g., English proficiency for international students, two‑semester inactivity and the LAS Re‑Entry Application for former UIUC students).  \n\n**Contact:** 112 English Building, 608 S Wright St, Urbana, IL 61801 – Email: onlineBLS@illinois.edu.",
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "latency": 17.65,
+      "error": null,
+      "prompt_variant": "original",
+      "question": "What are the admission requirements?",
+      "section": "Prospective Student Questions",
+      "subsection": "Admissions",
+      "num": 5,
+      "key": "Prospective Student Questions|Admissions|5",
+      "timestamp": "2026-03-10T16:27:25"
+    },
+    "Prospective Student Questions|Admissions|6": {
+      "answer": "- **Yes, transfer credits are accepted** into the Bachelor of Liberal Studies.  \n- You must have **at least 12 graded, transferable credit hours** before enrollment, and these credits count toward the program’s 120‑hour degree requirement.  \n- For a precise evaluation of how many of your credits will apply, please contact the BLS office at **onlineBLS@illinois.edu** (112 English Building, 608 S Wright St, Urbana, IL 61801).",
+      "draft": "- **Yes, you can transfer credits** into the Bachelor of Liberal Studies.  \n- You must have **at least 12 graded, transferable credit hours** at the time of enrollment, and many students bring **30‑60 credit hours** that transfer readily, subject to evaluation against the 120‑hour degree total.  \n\nIf you need a precise evaluation of how many of your credits will apply, please contact the BLS office directly.",
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "latency": 17.03,
+      "error": null,
+      "prompt_variant": "original",
+      "question": "Can I transfer credits? How many?",
+      "section": "Prospective Student Questions",
+      "subsection": "Admissions",
+      "num": 6,
+      "key": "Prospective Student Questions|Admissions|6",
+      "timestamp": "2026-03-10T16:27:43"
+    }
+  }
+}

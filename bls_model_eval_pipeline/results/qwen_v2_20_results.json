@@ -1,0 +1,422 @@
+[
+  {
+    "question": "What is the Bachelor of Liberal Studies (BLS) degree?",
+    "single": {
+      "answer": "The Bachelor of Liberal Studies (BLS) degree is a flexible, online degree program offered by the College of Liberal Arts & Sciences at the University of Illinois. It is designed for adult learners, transfer students, and degree completers who have some prior college experience but have not finished a bachelor's degree. Key features include:\n\n- **Fully Online and Asynchronous:** Courses are delivered entirely online, with most being asynchronous to accommodate busy schedules.\n- **Interdisciplinary Curriculum:** The program includes a broad range of courses from various departments, focusing on practical skills like communication, critical thinking, data analysis, and cultural competency.\n- **Concentrations:** Students can choose from three concentrations—Global Perspectives, Health and Society, and Management Studies—to tailor their studies to their interests and career goals.\n- **Transfer Credit Friendly:** The program accepts transfer credits, making it easier for students to complete their degree efficiently.\n- **Affordable Tuition:** The tuition rate is \\$433 per credit hour for the academic year 2025-2026, with no distinction between in-state and out-of-state students.\n- **Support Services:** Dedicated advisors provide personalized support from application to graduation, helping students navigate their academic journey.\n\nThe BLS degree aims to provide a versatile, career-ready education that prepares graduates for various fields, including education, government, non-profit organizations, and business. It also supports the university's mission to expand access to higher education and promote equity and inclusion.",
+      "ok": true,
+      "latency": 9.98,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "The Bachelor of Liberal Studies (BLS) degree is a flexible, online degree program offered by the College of Liberal Arts & Sciences at the University of Illinois. It is designed for adult learners, transfer students, and degree completers who have some prior college experience but have not finished a bachelor's degree. Key features include:\n\n- **Fully Online and Asynchronous:** Courses are delivered entirely online, with most being asynchronous to accommodate busy schedules.\n- **Interdisciplinary Curriculum:** The program includes a broad range of courses from various departments, focusing on developing practical skills like communication, critical thinking, data analysis, and cultural competency.\n- **Concentrations:** Students can choose from three concentrations—Global Perspectives, Health and Society, and Management Studies—to tailor their studies to their interests and career goals.\n- **Transfer Credit Friendly:** The program accepts transfer credits, making it easier for students to complete their degree efficiently.\n- **Affordable Tuition:** The tuition rate is \\$433 per credit hour for the 2025-2026 academic year, with no distinction between in-state and out-of-state students.\n- **Support Services:** Dedicated advisors and comprehensive support services are available to help students navigate their academic journey successfully.\n\nThe BLS degree aims to provide a pathway for students to complete their bachelor's degree, enhancing their career prospects and earning potential.",
+      "answer": "The Bachelor of Liberal Studies (BLS) degree is a flexible, online degree program offered by the College of Liberal Arts & Sciences at the University of Illinois. It is tailored for adult learners, transfer students, and degree completers who have some prior college experience but have not finished a bachelor's degree. Key features include:\n\n- **Fully Online and Asynchronous:** Courses are delivered entirely online, with most being asynchronous to accommodate busy schedules.\n- **Interdisciplinary Curriculum:** The program includes a broad range of courses from various departments, focusing on developing practical skills like communication, critical thinking, data analysis, and cultural competency.\n- **Concentrations:** Students can choose from three concentrations—Global Perspectives, Health and Society, and Management Studies—to tailor their studies to their interests and career goals.\n- **Transfer Credit Friendly:** The program accepts transfer credits, making it easier for students to complete their degree efficiently.\n- **Affordable Tuition:** The tuition rate is \\$433 per credit hour for the 2025-2026 academic year, with no distinction between in-state and out-of-state students.\n- **Support Services:** Dedicated advisors and comprehensive support services are available to help students navigate their academic journey successfully.\n\nThe BLS degree aims to provide a pathway for students to complete their bachelor's degree, enhancing their career prospects and earning potential.",
+      "ok": true,
+      "latency": 23.84,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:24:14"
+  },
+  {
+    "question": "Who is the BLS program designed for?",
+    "single": {
+      "answer": "The BLS program is designed for adult learners who have completed some college coursework but have not yet earned a bachelor's degree. Specifically, it targets individuals aged 25-40 who are working professionals, career changers, or those who previously stopped out of higher education due to family obligations or costs. The program is particularly suited for those who need a flexible, online format to balance their education with work and personal life. It also aims to support underrepresented groups, including Black and Latinx students, and first-generation students, by providing an accessible pathway to complete their degree.",
+      "ok": true,
+      "latency": 18.33,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "The BLS program is designed for adult learners who have completed some college coursework but have not yet earned a bachelor's degree. Specifically, it targets individuals aged 25-40 who are working professionals, career changers, or those who previously stopped out of college due to family obligations or costs. The program is particularly suited for those who need a flexible, online format to balance their education with work and personal life. It also aims to support underrepresented groups, including Black and Latinx students, and first-generation students, by providing an accessible pathway to complete their degree.",
+      "answer": "The BLS program is designed for adult learners who have completed some college coursework but have not yet earned a bachelor's degree. It specifically targets individuals aged 25-40, including working professionals, career changers, and those who previously stopped out of college due to family obligations or costs. The program is particularly suited for those needing a flexible, online format to balance education with work and personal life. It also aims to support underrepresented groups, including Black and Latinx students and first-generation students, by providing an accessible pathway to complete their degree.",
+      "ok": true,
+      "latency": 15.2,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:24:48"
+  },
+  {
+    "question": "How is BLS different from other LAS majors?",
+    "single": {
+      "answer": "The Bachelor of Liberal Studies (BLS) differs from other Liberal Arts and Sciences (LAS) majors in several key ways:\n\n- **Interdisciplinary Focus:** Unlike traditional LAS majors that typically focus on a single discipline, the BLS emphasizes interdisciplinary learning. Students can choose from three concentrations—Health and Society, Global Perspectives, and Management Studies—that span multiple fields, preparing them for diverse career paths BLS-Fast-Facts.pdf, p.1.\n\n- **Flexibility and Accessibility:** The BLS is designed specifically for adult learners and transfer students, offering a flexible, 100% online, asynchronous format. This accommodates the schedules of working professionals and those balancing personal and professional responsibilities BLS-Fast-Facts.pdf, p.1.\n\n- **Tailored Curriculum:** The BLS curriculum is structured to minimize prerequisites and maximize transfer credit acceptance, streamlining the path to degree completion for students with varied academic backgrounds 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.10. It also includes a mix of required core courses and elective options within concentrations, providing both structure and flexibility Executive-Summary-Liberal-Studies--BLS.pdf, p.2.\n\n- **Unique Concentrations:** The BLS offers concentrations that are not duplications of existing majors at the University of Illinois. These concentrations are designed to complement other offerings and fill a distinct niche in the university's academic portfolio 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.10.\n\n- **Support Services:** The BLS program includes proactive advising and support tailored to adult learners. Dedicated advisors guide students from enrollment to graduation, providing specialized assistance in course selection, career planning, and balancing studies with personal commitments 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.12. \n\nThese features make the BLS a unique option within the LAS college, catering specifically to the needs of non-traditional students seeking a flexible and interdisciplinary educational experience.",
+      "ok": true,
+      "latency": 15.04,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "The Bachelor of Liberal Studies (BLS) differs from other LAS majors in several key ways:\n\n- **Interdisciplinary Focus:** Unlike traditional LAS majors that typically focus on a single discipline, the BLS offers a cross-disciplinary curriculum. Students can choose from three concentrations—Health and Society, Global Perspectives, and Management Studies—that span multiple fields, preparing them for diverse career paths Executive-Summary-Liberal-Studies--BLS.pdf, p.2.\n\n- **Flexibility and Accessibility:** The BLS is designed specifically for adult learners and transfer students, offering a flexible, 100% online, asynchronous format. This accommodates the schedules of working professionals and those balancing personal commitments BLS-Fast-Facts.pdf, p.1. \n\n- **Minimal Prerequisites:** The BLS minimizes prerequisites to streamline the path to degree completion, making it easier for transfer students with varying levels of prior coursework to integrate into the program Executive-Summary-Liberal-Studies--BLS.pdf, p.2.\n\n- **Unique Curriculum Structure:** The BLS includes a structured academic plan with both required core courses and elective options within concentrations, providing both structure and flexibility. It also ensures compliance with the Illinois Board of Higher Education requirements for advanced professional roles Executive-Summary-Liberal-Studies--BLS.pdf, p.2. \n\n- **Targeted Support for Adult Learners:** The BLS includes proactive advising and support tailored to adult learners, with dedicated advisors guiding students from enrollment to graduation. The program also includes orientation sessions, a student success course, and frequent check-ins to ensure student engagement and success Executive-Summary-Liberal-Studies--BLS.pdf, p.2. \n\nThese features distinguish the BLS as a unique and flexible option within the College of Liberal Arts & Sciences, designed to meet the specific needs of non-traditional students.",
+      "answer": "The Bachelor of Liberal Studies (BLS) stands out from other LAS majors in several distinctive ways:\n\n- **Interdisciplinary Learning:** While traditional LAS majors concentrate on a single field, the BLS integrates a cross-disciplinary approach. Students can select from three concentrations—Health and Society, Global Perspectives, and Management Studies—spanning various disciplines. This broadens their skill set and prepares them for diverse career opportunities Executive-Summary-Liberal-Studies--BLS.pdf, p.2.\n\n- **Flexible Delivery:** Tailored for adult learners and transfer students, the BLS is delivered entirely online in an asynchronous format. This setup suits working professionals and those juggling personal responsibilities, offering unmatched flexibility BLS-Fast-Facts.pdf, p.1.\n\n- **Streamlined Pathway:** The BLS minimizes prerequisites, easing the transition for transfer students with different levels of prior coursework. This streamlined approach accelerates degree completion Executive-Summary-Liberal-Studies--BLS.pdf, p.2.\n\n- **Structured Yet Flexible Curriculum:** The BLS balances structure with flexibility. It mandates core courses while allowing students to customize their learning through concentration electives. This ensures compliance with advanced professional standards set by the Illinois Board of Higher Education Executive-Summary-Liberal-Studies--BLS.pdf, p.2.\n\n- **Specialized Support:** The BLS provides targeted support for adult learners, including dedicated advisors who guide students from enrollment to graduation. Additional resources like orientation sessions, a student success course, and regular check-ins enhance student engagement and success Executive-Summary-Liberal-Studies--BLS.pdf, p.2.\n\nThese characteristics make the BLS a unique and adaptable option within the College of Liberal Arts & Sciences, specifically designed to cater to the needs of non-traditional students.",
+      "ok": true,
+      "latency": 28.9,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:25:33"
+  },
+  {
+    "question": "What are the admission requirements?",
+    "single": {
+      "answer": "To be considered for the Bachelor of Liberal Studies (BLS) program, you must meet the following admission requirements:\n\n- **Transfer or Reentry Status:** The BLS program is designed for transfer or reentry students. It is not suitable for first-time freshmen.\n- **Credit Hours:** You must have completed at least 12 college-level, transferrable semester hours. AP credits or proficiency credits do not count toward this requirement.\n- **GPA:** Maintain a cumulative grade point average of 2.0 on a 4.0 scale based on all college-level work completed.\n\nFor specific categories of applicants:\n- **On-Campus Transfer Students:** Must have been inactive for one academic year, have a cumulative GPA of at least 2.0, and meet LAS Intercollegiate Transfer requirements.\n- **UIUC Reentry Students:** Must have been inactive for one academic year, complete the Re-Entry Application form, and meet on-campus transfer requirements.\n- **Off-Campus Transfer Students:** Must meet LAS transfer requirements for the BLS program, including the 12 credit hours and 2.0 GPA requirements.\n- **International Students:** Must satisfy the current full-status admissions requirement for English proficiency.\n\nMeeting these minimum requirements does not guarantee admission. Additional factors may influence the decision 10KV1414BLSU--Liberal-Studies--BLS.rtf; BLS-Admissions.pdf, p.1; [Admissions &amp; tuition | LAS Online | Illinois](https://lasonline.illinois.edu/programs/bls/admissions#faq \"Citation 4\").",
+      "ok": true,
+      "latency": 15.21,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "To be considered for the Bachelor of Liberal Studies (BLS) program, you must meet the following admission requirements:\n\n- **Transfer or Reentry Status:** The BLS program is designed for transfer or reentry students. It is not suitable for first-time freshmen.\n- **Credit Hours:** You must have completed at least 12 college-level, transferrable semester hours. AP credits or proficiency credits do not count toward this requirement.\n- **GPA:** You must maintain a cumulative grade point average of 2.0 on a 4.0 scale based on all college-level work completed.\n\nFor specific categories of applicants:\n- **On-Campus Transfer Students:** Must have been inactive for one academic year, have a cumulative GPA of at least 2.0, and meet LAS Intercollegiate Transfer requirements.\n- **UIUC Reentry Students:** Must have been inactive for one academic year, complete the Re-Entry Application form, and meet on-campus transfer requirements.\n- **Off-Campus Transfer Students:** Must meet LAS transfer requirements for the BLS program, including the 12 credit hours and 2.0 GPA requirements.\n- **International Students:** Must satisfy the current full-status admissions requirement for English proficiency.\n\nStudents who do not meet these admission requirements may submit an eligibility appeal through the LAS Recruitment and Admissions unit 10KV1414BLSU--Liberal-Studies--BLS.rtf; BLS-Admissions.pdf, p.1.",
+      "answer": "To be considered for the Bachelor of Liberal Studies (BLS) program, you must meet the following admission requirements:\n\n- **Transfer or Reentry Status:** The BLS program is designed for transfer or reentry students. It is not suitable for first-time freshmen.\n- **Credit Hours:** You must have completed at least 12 college-level, transferrable semester hours. AP credits or proficiency credits do not count toward this requirement.\n- **GPA:** You must maintain a cumulative grade point average of 2.0 on a 4.0 scale based on all college-level work completed.\n\nFor specific categories of applicants:\n\n- **On-Campus Transfer Students:** Must have been inactive for one academic year, have a cumulative GPA of at least 2.0, and meet LAS Intercollegiate Transfer requirements.\n- **UIUC Reentry Students:** Must have been inactive for one academic year, complete the Re-Entry Application form, and meet on-campus transfer requirements.\n- **Off-Campus Transfer Students:** Must meet LAS transfer requirements for the BLS program, including the 12 credit hours and 2.0 GPA requirements.\n- **International Students:** Must satisfy the current full-status admissions requirement for English proficiency.\n\nStudents who do not meet these admission requirements may submit an eligibility appeal through the LAS Recruitment and Admissions unit. \n\nFor more details or assistance, contact the BLS office at onlineBLS@illinois.edu.",
+      "ok": true,
+      "latency": 33.11,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:26:23"
+  },
+  {
+    "question": "Can I transfer credits? How many?",
+    "single": {
+      "answer": "Yes, you can transfer credits into the Bachelor of Liberal Studies (BLS) program. You must have at least 12 transferable credit hours at the time of enrollment. The program is designed to accept a significant amount of transfer credit, potentially up to 75 credit hours, though the exact number depends on your previous coursework and how it aligns with the BLS curriculum requirements. Students often enter with between 30 and 60 hours of previous college credits, which can significantly expedite degree completion. Always consult with an academic advisor to determine how your specific credits will transfer and apply toward your degree requirements.",
+      "ok": true,
+      "latency": 10.86,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "Yes, you can transfer credits into the Bachelor of Liberal Studies (BLS) program. You must have at least 12 transferable credit hours at the time of enrollment. The program is designed to accept transfer credits to help you complete your degree efficiently. The exact number of credits you can transfer depends on your previous coursework and how it aligns with the BLS curriculum requirements. Typically, students enter with between 30 and 60 hours of previous college credits, which can significantly expedite degree completion. However, the maximum number of transferable credits has not been specified. You should consult with an academic advisor to determine how your specific credits will apply toward your BLS degree.",
+      "answer": "Yes, you can transfer credits into the Bachelor of Liberal Studies (BLS) program. You must have at least 12 transferable credit hours at the time of enrollment. The program is designed to accept transfer credits to help you complete your degree efficiently. Typically, students enter with between 30 and 60 hours of previous college credits, which can significantly expedite degree completion. The exact number of credits you can transfer depends on your previous coursework and how it aligns with the BLS curriculum requirements. However, the maximum number of transferable credits has not been specified. You should consult with an academic advisor to determine how your specific credits will apply toward your BLS degree.",
+      "ok": true,
+      "latency": 25.38,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:27:00"
+  },
+  {
+    "question": "Is there a minimum GPA requirement?",
+    "single": {
+      "answer": "The Bachelor of Liberal Studies (BLS) program does not specify a minimum GPA requirement for admission. However, applicants should demonstrate academic capability through their transcripts and other application materials. For detailed requirements, visit the admissions page at lasonline.illinois.edu/programs/bls.",
+      "ok": true,
+      "latency": 2.82,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "Yes, there is a minimum GPA requirement. Students must have a cumulative grade point average of 2.0 on a 4.0 grading scale based on all college-level work completed to be considered for admission to the BLS program 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.21. Additionally, students must maintain a minimum GPA of 2.0 per semester to avoid academic warning and a cumulative GPA of 2.0 for graduation 6288--Liberal-Studies--Global-Perspectives--BLS.pdf, p.11; 6289--Liberal-Studies--Health-and-Society--BLS.pdf, p.11; 6287--Liberal-Studies--Management-Studies--BLS.pdf, p.11.",
+      "answer": "Yes, there is a minimum GPA requirement. Students must have a cumulative GPA of 2.0 on a 4.0 scale based on all college-level work completed to be considered for admission to the BLS program. Additionally, students must maintain a minimum GPA of 2.0 per semester to avoid academic warning and a cumulative GPA of 2.0 for graduation. This ensures students stay in good academic standing throughout their degree program.",
+      "ok": true,
+      "latency": 27.63,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:27:31"
+  },
+  {
+    "question": "When are application deadlines?",
+    "single": {
+      "answer": "The application deadlines for the Bachelor of Liberal Studies (BLS) program are as follows:\n\n- **Fall Admission:** January 15 to April 1, 2026\n- **Spring Admission:** September 1 to October 15, 2026\n- **Summer Admission:** No posted deadlines\n\nAdditionally, the BLS program has a mostly rolling application period, offering a wider window compared to traditional transfer applications. For Fall applications specifically, the program accepts applications through July ",
+      "ok": true,
+      "latency": 14.85,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "The application deadlines for the Bachelor of Liberal Studies (BLS) program are as follows:\n\n- **Fall Admission:** January 15 – April 1, 2026\n- **Spring Admission:** September 1 – October 15, 2026\n- **Summer Admission:** No posted deadlines\n\nAdditionally, the BLS program has a mostly rolling application period, offering a wider window compared to traditional transfer applications. For Fall applications specifically, the program accepts applications through July ",
+      "answer": "The application deadlines for the Bachelor of Liberal Studies (BLS) program are:\n\n- **Fall Admission:** January 15 – April 1, 2026\n- **Spring Admission:** September 1 – October 15, 2026\n- **Summer Admission:** No specific deadlines are posted\n\nFor Fall admission, the BLS program offers a rolling application process, accepting applications up until July. This provides a broader timeframe compared to traditional transfer applications.",
+      "ok": true,
+      "latency": 12.8,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:28:00"
+  },
+  {
+    "question": "What concentrations are available?",
+    "single": {
+      "answer": "The Bachelor of Liberal Studies (BLS) program offers three concentrations:\n\n- **Global Perspectives**: Focuses on understanding global issues from various disciplinary perspectives, including courses like Global Health: Policy & Governance and Impacts of Globalization.\n- **Health and Society**: Explores how social, cultural, and environmental factors influence health outcomes, with courses such as Global Health: Interventions & Evaluations and Disability in American Society.\n- **Management Studies**: Provides a foundation in management fundamentals, leadership, and organizational behavior, featuring courses like Diversity in the Workplace and Sales Management.\n\nEach concentration requires 15 credit hours.",
+      "ok": true,
+      "latency": 11.31,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "The Bachelor of Liberal Studies (BLS) program offers three concentrations:\n\n- **Global Perspectives**: Focuses on understanding global issues from various disciplinary perspectives, including courses like Global Health: Policy & Governance and Impacts of Globalization.\n- **Health and Society**: Explores how social, cultural, and environmental factors influence health outcomes, with courses such as Global Health: Interventions & Evaluations and Disability in American Society.\n- **Management Studies**: Provides a foundation in management fundamentals, leadership, and organizational behavior, featuring courses like Diversity in the Workplace and Sales Management.\n\nEach concentration requires 15 credit hours.",
+      "answer": "The Bachelor of Liberal Studies (BLS) program offers three concentrations:\n\n- **Global Perspectives**: This concentration focuses on understanding global issues from various disciplinary perspectives. It includes courses like Global Health: Policy & Governance and Impacts of Globalization.\n- **Health and Society**: This concentration explores how social, cultural, and environmental factors influence health outcomes. It features courses such as Global Health: Interventions & Evaluations and Disability in American Society.\n- **Management Studies**: This concentration provides a foundation in management fundamentals, leadership, and organizational behavior. It includes courses like Diversity in the Workplace and Sales Management.\n\nEach concentration requires 15 credit hours.",
+      "ok": true,
+      "latency": 25.08,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:28:37"
+  },
+  {
+    "question": "Are there required courses?",
+    "single": {
+      "answer": "Yes, there are required courses for the Bachelor of Liberal Studies (BLS) program. The required core courses total 44 credit hours and include subjects such as Personal Financial Planning, Consumer Data and Society, Sales and the Consumer, Management and Organizational Behavior, Global Business Communication, Business and Professional Communication, Mass Media and the Audience, Everyday Economics for Non-Majors, Race and Cultural Diversity, Statistics, and U.S. Racial and Ethnic Politics 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.pdf, p.9; BLS-Curriculum-Sheet.pdf, p.1; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.18; 6289--Liberal-Studies--Health-and-Society--BLS.pdf, p.9; BLS-courses-2-page-flier-v1.pdf, p.1; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; BLS-Overview-OperationsDiscussion-5-15-2025.pdf, p.6; BLS-Curriculum---Gen-Ed-Table.pdf, p.1; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.16; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6288--Liberal-Studies--Global-Perspectives--BLS.pdf, p.7; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; Executive-Summary-Liberal-Studies--BLS.pdf, p.2; 6288--Liberal-Studies--Global-Perspectives--BLS.pdf, p.6; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.14; BLS-courses-2-page-flier-v1.pdf, p.2; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; BLS-Overview-OperationsDiscussion-5-15-2025.pdf, p.7. Additionally, students must choose one concentration from Global Perspectives, Health and Society, or Management Studies, which requires an additional 14-15 credit hours.",
+      "ok": true,
+      "latency": 19.17,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "Yes, there are required courses for the Bachelor of Liberal Studies (BLS) program. The program includes 44 required core courses that cover essential skills such as communication, critical thinking, cultural competency, data analysis, and leadership. Examples of these core courses include:\n\n- **Personal Financial Planning (ACE 240)**\n- **Consumer Data and Society (ADV 120)**\n- **Sales and the Consumer (ADV 370)**\n- **Management and Organizational Behavior (BADM 310)**\n- **Global Business Communication (BTW 380)**\n- **Business and Professional Communication (CMN 211)**\n- **Mass Media and the Audience (CMN 326)**\n- **Everyday Economics for Non-Majors (ECON 300)**\n- **Race and Cultural Diversity (EPOL 310)**\n- **Statistics (STAT 100)**\n- **U.S. Racial and Ethnic Politics (PS 201)**\n\nAdditionally, students must choose one of three concentrations—Global Perspectives, Health and Society, or Management Studies—and complete 14-15 credit hours in their chosen concentration. Free electives are also available to reach the total of 120 credit hours required for graduation.",
+      "answer": "Yes, there are required courses for the Bachelor of Liberal Studies (BLS) program. The program mandates 44 credit hours of core courses that focus on essential skills like communication, critical thinking, cultural competency, data analysis, and leadership. Key required courses include:\n\n- **Personal Financial Planning (ACE 240)**\n- **Consumer Data and Society (ADV 120)**\n- **Sales and the Consumer (ADV 370)**\n- **Management and Organizational Behavior (BADM 310)**\n- **Global Business Communication (BTW 380)**\n- **Business and Professional Communication (CMN 211)**\n- **Mass Media and the Audience (CMN 326)**\n- **Everyday Economics for Non-Majors (ECON 300)**\n- **Race and Cultural Diversity (EPOL 310)**\n- **Statistics (STAT 100)**\n- **U.S. Racial and Ethnic Politics (PS 201)**\n\nStudents must also select one concentration—Global Perspectives, Health and Society, or Management Studies—and complete 14-15 credit hours in their chosen area. Free electives are available to reach the total of 120 credit hours needed for graduation.",
+      "ok": true,
+      "latency": 26.32,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:29:24"
+  },
+  {
+    "question": "How long does it take to complete the degree?",
+    "single": {
+      "answer": "The maximum time to complete the Bachelor of Liberal Studies (BLS) program is 8 years. However, the typical completion time can vary based on the number of credits a student takes per semester. For instance, part-time students might take around 15 credits per year, while full-time students could complete the program faster by taking more credits per semester. The program is designed to be flexible, accommodating different schedules and pacing preferences.",
+      "ok": true,
+      "latency": 8.83,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "The maximum time to complete the Bachelor of Liberal Studies (BLS) program is 8 years. However, the typical completion time can vary based on the number of credits a student takes per semester. For instance, part-time students might take 15 credits per year, while full-time students could complete the program faster by taking more credits per semester. The program is designed to be flexible, accommodating different schedules and paces of learning.",
+      "answer": "The maximum time to complete the Bachelor of Liberal Studies (BLS) program is 8 years. However, the actual duration depends on the number of credits a student takes each semester. Part-time students typically take about 15 credits per year, which extends the completion time. Full-time students can finish faster by enrolling in more credits per semester. The program's flexibility accommodates various schedules and learning paces.",
+      "ok": true,
+      "latency": 24.94,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:29:59"
+  },
+  {
+    "question": "What is the tuition cost?",
+    "single": {
+      "answer": "The tuition cost for the Bachelor of Liberal Studies (BLS) program is \\$433 per credit hour for the academic year 2025-2026. There is also an online service fee of \\$3 per billing hour. The total cost varies based on the number of credit hours a student takes each semester.",
+      "ok": true,
+      "latency": 8.66,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "The tuition cost for the Bachelor of Liberal Studies (BLS) program is \\$433 per credit hour for the academic year 2025-2026. There is also an online service fee of \\$3 per billing hour. The total cost varies based on the number of credit hours a student takes each semester.",
+      "answer": "The tuition cost for the Bachelor of Liberal Studies (BLS) program is \\$433 per credit hour for the academic year 2025-2026. An additional online service fee of \\$3 per billing hour applies. The total cost depends on the number of credit hours a student enrolls in each semester.",
+      "ok": true,
+      "latency": 21.41,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:30:30"
+  },
+  {
+    "question": "Is financial aid available for part-time students?",
+    "single": {
+      "answer": "Yes, financial aid is available for part-time students in the BLS program. Part-time students can qualify for federal aid such as Pell Grants and Direct Loans, provided they meet the eligibility criteria. For instance, Pell Grants can be received for up to 12 semesters, and part-time students need to enroll in at least 6 credit hours (half-time) to qualify. Direct Loans are also available to eligible part-time students, though they have annual and lifetime caps. Additionally, state-specific aid like the Monetary Award Program (MAP) Grant is available for students with financial need enrolled in at least 3 credit hours. The Illinois Promise Program is another option, though it requires full-time enrollment, which typically means taking at least 12 credit hours per semester. However, students with special circumstances may still apply for financial aid through other programs 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.6.",
+      "ok": true,
+      "latency": 10.28,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "Yes, financial aid is available for part-time students in the BLS program. Part-time students can qualify for federal aid like Pell Grants and Direct Loans, provided they meet the eligibility criteria. For instance, Pell Grants can be received for up to 12 semesters, and part-time students need to enroll in at least 6 credit hours (half-time) to qualify. Direct Loans are also available to eligible part-time students, though they have annual and lifetime caps. Additionally, state-specific aid such as the Monetary Award Program (MAP) Grant is available for students with financial need enrolled in at least 3 credit hours. The Illinois Promise Program is another significant option, though it requires full-time enrollment, which typically means taking at least 12 credit hours per semester. However, students who do not meet full-time enrollment but have special circumstances may still apply for financial aid through other programs 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.6.",
+      "answer": "Yes, financial aid is available for part-time students in the BLS program. Part-time students can qualify for federal aid like Pell Grants and Direct Loans if they meet the eligibility criteria. For example, Pell Grants can be received for up to 12 semesters, and part-time students need to enroll in at least 6 credit hours (half-time) to qualify. Direct Loans are also available to eligible part-time students, though they have annual and lifetime caps. Additionally, state-specific aid such as the Monetary Award Program (MAP) Grant is available for students with financial need enrolled in at least 3 credit hours. The Illinois Promise Program is another significant option, though it requires full-time enrollment—typically meaning taking at least 12 credit hours per semester. However, students who do not meet full-time enrollment but have special circumstances may still apply for financial aid through other programs10KV1414BLSU--Liberal-Studies--BLS.pdf, p.6.",
+      "ok": true,
+      "latency": 20.66,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:31:02"
+  },
+  {
+    "question": "Does the BLS program accept the U of I employee tuition waiver?",
+    "single": {
+      "answer": "Yes, the BLS program accepts the University of Illinois employee tuition waiver if the applicant meets the waiver eligibility requirements BLS-Fast-Facts.pdf, p.1.",
+      "ok": true,
+      "latency": 9.2,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "Yes, the BLS program accepts the University of Illinois employee tuition waiver if the applicant meets the waiver eligibility requirements BLS-Fast-Facts.pdf, p.1.",
+      "answer": "Yes, the BLS program accepts the University of Illinois employee tuition waiver if the applicant meets the waiver eligibility requirementsBLS-Fast-Facts.pdf, p.1.",
+      "ok": true,
+      "latency": 15.61,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:31:27"
+  },
+  {
+    "question": "How do I schedule an advising appointment?",
+    "single": {
+      "answer": "To schedule an advising appointment for the Bachelor of Liberal Studies (BLS) program, follow these steps:\n\n- **Contact Your Advisor:** Each BLS student has a dedicated advisor who will guide them throughout their program. You can reach out to your assigned advisor directly via email, phone, or virtual meeting. The BLS program ensures flexible hours, including evenings, early mornings, weekends, and lunch hours, to accommodate various schedules.\n\n- **Use Multiple Contact Methods:** You can choose your preferred method of communication—email, phone, virtual meetings, or text—to set up an appointment. During your initial intake, you can discuss your preferred check-in frequency, whether weekly, monthly, or once per semester.\n\n- **Office Information:** If you need further assistance, you can visit the BLS office at 112 English Building, 608 S Wright St, Urbana, IL 61801. You can also email the BLS office at onlineBLS@illinois.edu for additional support.\n\nRemember, the goal is to build a consistent, long-term advising relationship that supports your academic success.",
+      "ok": true,
+      "latency": 12.32,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "To schedule an advising appointment for the Bachelor of Liberal Studies (BLS) program, follow these steps:\n\n- **Contact Your Advisor:** Each BLS student has a dedicated advisor throughout their program. Reach out to your assigned advisor directly via email, phone, or other preferred methods of communication. Advisors are available during flexible hours, including evenings, early mornings, weekends, and lunch hours.\n\n- **Use Multiple Contact Methods:** You can choose from various contact methods such as email, phone calls, virtual meetings, or text messages. Discuss your preferred check-in frequency during your initial intake, whether weekly, monthly, or once per semester.\n\n- **Office Information:** If you need further assistance, visit the BLS office at 112 English Building, 608 S Wright St, Urbana, IL 61801, or email onlineBLS@illinois.edu.\n\nYour advisor will help you with course planning, registration, academic coaching, and other support areas specific to your needs.",
+      "answer": "To schedule an advising appointment for the Bachelor of Liberal Studies (BLS) program:\n\n- **Reach Out to Your Advisor:** Each BLS student is assigned a dedicated advisor who will guide them throughout the program. Contact your advisor using your preferred method—email, phone, virtual meeting, or text. Advisors are available during flexible hours, including evenings, early mornings, weekends, and lunch hours.\n\n- **Discuss Check-In Frequency:** During your initial intake, discuss and decide on your preferred check-in frequency, whether weekly, monthly, or once per semester.\n\n- **Office Contact Info:** For additional support, visit the BLS office at 112 English Building, 608 S Wright St, Urbana, IL 61801, or email onlineBLS@illinois.edu.\n\nYour advisor will assist you with course planning, registration, academic coaching, and other support areas tailored to your needs.",
+      "ok": true,
+      "latency": 20.98,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:32:02"
+  },
+  {
+    "question": "What is the GPA requirement to stay in good standing?",
+    "single": {
+      "answer": "To stay in good standing in the Bachelor of Liberal Studies (BLS) program, students must maintain a minimum cumulative GPA of 2.0. If a student's GPA falls below this threshold, they may be placed on academic warning. Remaining on academic warning for more than two consecutive semesters can lead to consideration for dismissal from the program. Any student who attains a GPA below 1.0 during a semester faces immediate dismissal. Advisors play a crucial role in monitoring student performance and providing support 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.21; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6288--Liberal-Studies--Global-Perspectives--BLS.pdf, p.11; 6289--Liberal-Studies--Health-and-Society--BLS.pdf, p.11; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.pdf, p.11; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.20; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.42; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; BLS-Admissions.pdf, p.1; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.30; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.17; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.pdf, p.9; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.27; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.16.",
+      "ok": true,
+      "latency": 21.71,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "To stay in good standing in the Bachelor of Liberal Studies (BLS) program, students must maintain a minimum cumulative GPA of 2.0. If a student's GPA falls below this threshold, they may be placed on academic warning. Remaining on academic warning for more than two consecutive semesters can lead to consideration for dismissal from the program. Any student who attains a GPA below 1.0 during a semester faces immediate dismissal. Advisors play a crucial role in monitoring student performance and providing support 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.21; 6288--Liberal-Studies--Global-Perspectives--BLS.pdf, p.11; 6289--Liberal-Studies--Health-and-Society--BLS.pdf, p.11; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.pdf, p.11; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.20; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.42; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; BLS-Admissions.pdf, p.1; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.30; 6289--Liberal-Studies--Health-and-Society--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.17; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 10KV1414BLSU--Liberal-Studies--BLS.rtf; 6288--Liberal-Studies--Global-Perspectives--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.rtf; 6287--Liberal-Studies--Management-Studies--BLS.pdf, p.9; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.27; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.16.",
+      "answer": "To stay in good standing in the Bachelor of Liberal Studies (BLS) program, students must maintain a minimum cumulative GPA of 2.0. If a student's GPA falls below this threshold, they may be placed on academic warning. Remaining on academic warning for more than two consecutive semesters can lead to consideration for dismissal from the program. Any student who attains a GPA below 1.0 during a semester faces immediate dismissal. Advisors play a crucial role in monitoring student performance and providing support.",
+      "ok": true,
+      "latency": 22.57,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:32:47"
+  },
+  {
+    "question": "Will this degree feel legitimate compared to traditional majors?",
+    "single": {
+      "answer": "The Bachelor of Liberal Studies (BLS) degree is designed to be just as legitimate as traditional majors, despite its unique structure. Here's why:\n\n- **Interdisciplinary Approach**: The BLS program offers an interdisciplinary curriculum that draws from various departments within the College of Liberal Arts & Sciences and other campus partners. This broad exposure ensures a well-rounded education that fosters critical thinking, communication skills, and cultural awareness, comparable to traditional majors Executive-Summary-Liberal-Studies--BLS.pdf, p.2; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.24; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.16.\n\n- **Rigorous Requirements**: Students must complete 120 credit hours, including 42 hours of general education distribution core requirements and maintain a cumulative GPA of 2.00 or better. The program also requires one 30-hour concentration and 48 hours of general electives, ensuring a substantial and rigorous academic experience IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.16.\n\n- **Residency Requirement**: To fulfill the residency requirement, students must earn at least 45 of their final 60 hours of credit with courses from the University of Illinois, including at least 21 hours at the 300- or 400-level. This ensures that students engage deeply with the University's academic offerings IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx.\n\n- **Career-Relevant Skills**: The curriculum is aligned with key competencies defined by the National Association of Colleges and Employers (NACE), including communication, leadership, critical thinking, and data analysis. These skills are highly valued by employers, making the degree practical and relevant Executive-Summary-Liberal-Studies--BLS.pdf, p.2; Executive-Summary-Liberal-Studies--BLS.pdf, p.1.\n\n- **Recognition and Accreditation**: The BLS degree is fully accredited by the University of Illinois, a prestigious institution known for its high-quality education. This accreditation ensures that the degree is recognized and respected in both academic and professional circles Executive-Summary-Liberal-Studies--BLS.pdf, p.2; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.16.\n\nTherefore, the BLS degree is structured to provide a legitimate and valuable educational experience that is on par with traditional majors.",
+      "ok": true,
+      "latency": 18.79,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "The Bachelor of Liberal Studies (BLS) degree is designed to be just as legitimate as traditional majors, despite its unique structure. Here's why:\n\n- **Interdisciplinary Approach**: The BLS program offers a broad, interdisciplinary curriculum that draws from various departments within the College of Liberal Arts & Sciences and other campus partners. This ensures a well-rounded education that fosters critical thinking, communication skills, and cultural awareness, similar to traditional liberal arts degrees IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx; Executive-Summary-Liberal-Studies--BLS.pdf, p.2; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.24.\n\n- **Rigorous Requirements**: Students must complete 120 credit hours, including 42 hours of general education distribution core requirements and maintain a cumulative GPA of 2.00 or better. The program also requires one 30-hour concentration and 48 hours of general electives, ensuring a substantial and rigorous academic experience IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.24.\n\n- **Accreditation and Recognition**: The BLS degree is fully accredited by the University of Illinois, a prestigious institution known for its high academic standards. This accreditation ensures that the degree is recognized and respected by employers and other educational institutions IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx; Executive-Summary-Liberal-Studies--BLS.pdf, p.2; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.24.\n\n- **Career Preparation**: The curriculum is aligned with key competencies defined by the National Association of Colleges and Employers (NACE), including communication, leadership, critical thinking, and data analysis. These skills are highly valued by employers, making the degree relevant and valuable in the job market Executive-Summary-Liberal-Studies--BLS.pdf, p.2; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.24.\n\n- **Flexibility Without Compromise**: While the program offers flexibility with online, asynchronous courses and multiple start dates, it maintains academic rigor and quality. The flexibility is designed to accommodate working professionals and caregivers, ensuring that students can balance education with personal and professional commitments without compromising the integrity of their education IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx; Executive-Summary-Liberal-Studies--BLS.pdf, p.2; 10KV1414BLSU--Liberal-Studies--BLS.pdf, p.24.\n\nIn summary, the BLS degree is structured to provide a legitimate and valuable educational experience that is comparable to traditional majors, with added flexibility to meet the needs of non-traditional students.",
+      "answer": "The Bachelor of Liberal Studies (BLS) degree is indeed as legitimate as traditional majors, thanks to its robust structure and alignment with high academic standards:\n\n- **Interdisciplinary Curriculum**: The BLS program integrates courses from various departments within the College of Liberal Arts & Sciences and other campus partners, ensuring a well-rounded education that fosters critical thinking, communication skills, and cultural awareness, similar to traditional liberal arts degrees IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx; Executive-Summary-Liberal-Studies--BLS.pdf, p.2; BLS-marketing-plan-3-28-25.docx.\n\n- **Rigorous Academic Requirements**: Students must complete 120 credit hours, including 42 hours of general education, one 30-hour concentration, and 48 hours of general electives. Maintaining a cumulative GPA of 2.00 or better ensures a substantial and rigorous academic experience IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx; BLS-marketing-plan-3-28-25.docx.\n\n- **Accreditation and Recognition**: As a degree from the University of Illinois, a prestigious institution, the BLS is fully accredited. This guarantees recognition and respect from employers and other educational institutions IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx; Executive-Summary-Liberal-Studies--BLS.pdf, p.2; BLS-marketing-plan-3-28-25.docx.\n\n- **Career-Relevant Skills**: The curriculum aligns with competencies defined by the National Association of Colleges and Employers (NACE), such as communication, leadership, critical thinking, and data analysis. These skills are highly valued in the job market Executive-Summary-Liberal-Studies--BLS.pdf, p.2; BLS-marketing-plan-3-28-25.docx.\n\n- **Flexibility with Rigor**: The program offers online, asynchronous courses and multiple start dates to accommodate working professionals and caregivers. Despite this flexibility, it maintains academic rigor, ensuring students receive a high-quality education IFG-Proposal-LAS-ONL-BLS-Degree-FINAL.docx; Executive-Summary-Liberal-Studies--BLS.pdf, p.2; BLS-marketing-plan-3-28-25.docx.\n\nIn essence, the BLS degree provides a legitimate and valuable educational experience comparable to traditional majors, with added flexibility for non-traditional students.",
+      "ok": true,
+      "latency": 32.42,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:33:39"
+  },
+  {
+    "question": "Is BLS a good option if I'm returning to school after many years?",
+    "single": {
+      "answer": "Yes, the Bachelor of Liberal Studies (BLS) is an excellent option if you're returning to school after many years. The program is specifically designed for adult learners, transfer students, and degree completers who may have taken a break from formal education. Here are key reasons why BLS is suitable for you:\n\n- **Flexible Learning Format:** The BLS is 100% online and asynchronous, allowing you to study at your own pace and fit your coursework around your current commitments, whether they are work, family, or other responsibilities.\n\n- **Supportive Environment:** The program offers comprehensive support services tailored to adult learners. This includes dedicated advisors who guide you from application to graduation, ensuring you have the resources and assistance needed to succeed. There's also a student success course, LAS 103, designed to help you transition smoothly into university life.\n\n- **Career-Relevant Skills:** The curriculum emphasizes practical skills that are highly valued by employers, such as communication, critical thinking, data analysis, and cultural competency. These skills are essential for career advancement and can be applied in various fields.\n\n- **Transfer Credits:** If you have previous college credits, the BLS program can accept them, which can expedite your degree completion. This is particularly beneficial if you've completed some coursework in the past but didn't finish your degree.\n\n- **Affordable Tuition:** The tuition rate is \\$433 per credit hour, with no distinction between in-state and out-of-state students. This makes it a cost-effective option for returning students.\n\nGiven these features, the BLS program is well-suited for individuals returning to education after a significant break, providing a flexible, supportive, and practical path to completing a bachelor's degree.",
+      "ok": true,
+      "latency": 16.09,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "Yes, the Bachelor of Liberal Studies (BLS) is an excellent option if you're returning to school after many years. The program is specifically designed for adult learners, transfer students, and degree completers who may have taken a break from formal education. Here are key reasons why BLS is suitable for you:\n\n- **Flexible Learning Format:** The BLS is 100% online and asynchronous, allowing you to study at your own pace and fit your education around your current life commitments, such as work or family responsibilities.\n\n- **Structured Yet Flexible Curriculum:** The program offers a structured academic plan with flexibility, including a core curriculum and three concentration options: Health and Society, Global Perspectives, and Management Studies. This structure helps you stay on track while allowing you to tailor your studies to your interests and career goals.\n\n- **Comprehensive Support System:** The BLS includes proactive advising and support tailored to adult learners. Dedicated advisors guide you from enrollment to graduation, providing specialized assistance in course selection, concentration choices, and career planning. The program also offers an onboarding course, LAS 103: BLS Online Student Success, designed to help you transition smoothly into university life.\n\n- **Career-Relevant Skills:** The curriculum emphasizes practical skills that are highly valued by employers, such as communication, critical thinking, data analysis, and cultural competency. These skills are essential for career advancement and personal development.\n\n- **Affordable Tuition:** The tuition rate is \\$433 per credit hour, with no distinction between in-state and out-of-state students. The program also accepts University of Illinois employee tuition waivers and offers various financial aid options, including federal and state aid, scholarships, and grants.\n\nGiven these features, the BLS program is well-suited for individuals returning to school after a significant break, providing a supportive and flexible pathway to complete a bachelor's degree.",
+      "answer": "Yes, the Bachelor of Liberal Studies (BLS) is an excellent option if you're returning to school after many years. The program is specifically designed for adult learners, transfer students, and degree completers who may have taken a break from formal education. Here are key reasons why BLS is suitable for you:\n\n- **Flexible Learning Format:** The BLS is 100% online and asynchronous, allowing you to study at your own pace and fit your education around your current life commitments, such as work or family responsibilities.\n\n- **Structured Yet Flexible Curriculum:** The program offers a structured academic plan with flexibility, including a core curriculum and three concentration options: Health and Society, Global Perspectives, and Management Studies. This structure helps you stay on track while allowing you to tailor your studies to your interests and career goals.\n\n- **Comprehensive Support System:** The BLS includes proactive advising and support tailored to adult learners. Dedicated advisors guide you from enrollment to graduation, providing specialized assistance in course selection, concentration choices, and career planning. The program also offers an onboarding course, LAS 103: BLS Online Student Success, designed to help you transition smoothly into university life.\n\n- **Career-Relevant Skills:** The curriculum emphasizes practical skills that are highly valued by employers, such as communication, critical thinking, data analysis, and cultural competency. These skills are essential for career advancement and personal development.\n\n- **Affordable Tuition:** The tuition rate is \\$433 per credit hour, with no distinction between in-state and out-of-state students. The program also accepts University of Illinois employee tuition waivers and offers various financial aid options, including federal and state aid, scholarships, and grants.\n\nGiven these features, the BLS program is well-suited for individuals returning to school after a significant break, providing a supportive and flexible pathway to complete a bachelor's degree.",
+      "ok": true,
+      "latency": 27.45,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:34:24"
+  },
+  {
+    "question": "How flexible is the program if I work full-time?",
+    "single": {
+      "answer": "The Bachelor of Liberal Studies (BLS) program is highly flexible for students who work full-time. Here are the key points:\n\n- **Asynchronous Courses:** All courses are online and asynchronous, allowing you to access course materials and complete assignments at your own pace within specified deadlines. This format enables you to balance your academic commitments with your work schedule.\n\n- **Part-Time Enrollment Option:** The program accommodates part-time enrollment, with students typically taking around 15 credit hours per year. This pacing is designed to fit the schedules of working adults and allows you to manage your workload effectively.\n\n- **Multiple Start Dates:** The program offers multiple start dates throughout the year, giving you the flexibility to begin your studies when it best suits your schedule.\n\n- **Structured Yet Flexible Curriculum:** While the program provides a structured academic plan with core courses and concentrations, it also allows for some flexibility in choosing electives and pacing your studies. This balance helps you stay on track while accommodating your professional and personal responsibilities.\n\n- **Support Services:** Dedicated advisors are available to help you plan your academic journey, ensuring that you can navigate the program successfully while managing a full-time job.\n\nWith these features, the BLS program is tailored to support working professionals in achieving their educational goals without disrupting their careers.",
+      "ok": true,
+      "latency": 15.34,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "The Bachelor of Liberal Studies (BLS) program is highly flexible for students who work full-time. Here are the key points that highlight this flexibility:\n\n- **Asynchronous Courses:** All courses are offered asynchronously, allowing you to access course materials and complete assignments at your own pace within specified deadlines. This structure enables you to balance your academic commitments with your work schedule.\n\n- **Part-Time Enrollment Option:** The program accommodates part-time enrollment, with students typically taking around 15 credit hours per year. This pacing allows you to manage your workload without overwhelming yourself.\n\n- **Multiple Start Dates:** The program offers multiple start dates throughout the year, giving you the flexibility to begin your studies when it best suits your schedule.\n\n- **Structured Yet Flexible Curriculum:** While the program provides a structured academic plan with core courses and concentrations, it also allows for some flexibility in choosing electives and pacing your studies according to your needs.\n\n- **Online Format:** Being entirely online, the program eliminates the need for physical presence on campus, saving you time and effort that can be redirected towards your professional and personal life.\n\nThese features collectively make the BLS program suitable for working professionals who need a flexible educational path to complete their bachelor's degree.",
+      "answer": "The Bachelor of Liberal Studies (BLS) program is highly flexible for students who work full-time. Key features include:\n\n- **Asynchronous Courses:** All courses are online and asynchronous, letting you access materials and complete assignments on your own schedule within set deadlines. This setup helps you balance work and studies.\n\n- **Part-Time Option:** You can enroll part-time, typically taking about 15 credit hours per year. This slower pace lets you manage your workload effectively.\n\n- **Multiple Start Dates:** With start dates in fall, spring, and summer, you can begin the program whenever it fits your schedule.\n\n- **Structured with Flexibility:** The curriculum includes core courses and concentrations but also allows you to choose electives and pace your studies as needed.\n\n- **Fully Online:** The online format means no campus visits, saving time and effort for your professional and personal life.\n\nThese elements make the BLS program ideal for working professionals seeking a flexible path to complete their bachelor's degree.",
+      "ok": true,
+      "latency": 24.2,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:35:04"
+  },
+  {
+    "question": "Can BLS help me pivot industries?",
+    "single": {
+      "answer": "Yes, the Bachelor of Liberal Studies (BLS) program can help you pivot into a new industry. The curriculum is designed to equip students with versatile, career-ready skills such as communication, leadership, teamwork, critical thinking, data analysis, and cultural competency—skills that are highly valued by employers across various sectors. With three concentrations—Global Perspectives, Health and Society, and Management Studies—you can tailor your education to align with your new career aspirations. Additionally, the program offers resources like career services, workshops on resume writing and interview skills, and internship opportunities that can facilitate your transition into a new field. The flexibility of the online, asynchronous format allows you to pursue this educational path while maintaining your current professional commitments.",
+      "ok": true,
+      "latency": 14.84,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "Yes, the Bachelor of Liberal Studies (BLS) program can help you pivot into a new industry. The curriculum is designed to equip students with versatile, career-ready skills such as communication, leadership, teamwork, critical thinking, data analysis, and cultural competency—skills that are highly valued by employers across various sectors. The program offers three concentrations—Global Perspectives, Health and Society, and Management Studies—that allow you to tailor your education to align with your new career aspirations. Additionally, the BLS program provides access to career services, including workshops on resume writing, interview preparation, and job search strategies, which can support your transition into a new field. With its flexible online format and personalized support, the BLS program is well-suited for adult learners looking to make a career change.",
+      "answer": "Yes, the Bachelor of Liberal Studies (BLS) program can indeed help you pivot into a new industry. The curriculum is designed to equip you with versatile, career-ready skills such as communication, leadership, teamwork, critical thinking, data analysis, and cultural competency—skills that are highly valued by employers across various sectors. \n\nThe BLS offers three concentrations—Global Perspectives, Health and Society, and Management Studies—that allow you to tailor your education to align with your new career aspirations. Additionally, the program provides access to career services, including workshops on resume writing, interview preparation, and job search strategies, which can support your transition into a new field. \n\nWith its flexible online format and personalized support, the BLS program is well-suited for adult learners looking to make a career change. You'll have the opportunity to build a strong foundation in core disciplines while exploring a diverse range of subjects, all of which can facilitate a smooth transition into a new industry.",
+      "ok": true,
+      "latency": 21.58,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:35:42"
+  },
+  {
+    "question": "How do employers view interdisciplinary degrees?",
+    "single": {
+      "answer": "Employers view interdisciplinary degrees positively, especially when they align with the competencies and skills valued in today's job market. The Bachelor of Liberal Studies (BLS) program, for example, equips graduates with versatile skills such as communication, leadership, teamwork, critical thinking, data analysis, and cultural competency—skills that are highly sought after by employers according to the National Association of Colleges and Employers (NACE).\n\nThese interdisciplinary degrees provide students with a broad knowledge base and the ability to integrate insights from multiple disciplines, which can be beneficial in solving complex problems and navigating diverse work environments. Employers appreciate candidates who can think critically, communicate effectively, and adapt to new situations, all of which are fostered through an interdisciplinary education.\n\nMoreover, the BLS program offers concentrations in areas like Global Perspectives, Health and Society, and Management Studies, allowing students to tailor their education to specific career goals. This customization ensures that graduates possess specialized knowledge relevant to their chosen fields, making them attractive to employers in various sectors. Overall, interdisciplinary degrees like the BLS demonstrate a student's ability to learn across disciplines and apply that knowledge in practical, real-world settings.",
+      "ok": true,
+      "latency": 12.68,
+      "usage": {}
+    },
+    "dual": {
+      "draft": "Employers generally view interdisciplinary degrees positively, especially when they see that graduates possess a broad set of skills that are highly valued in today's job market. The Bachelor of Liberal Studies (BLS) program at the University of Illinois, for example, equips students with versatile skills such as communication, leadership, teamwork, critical thinking, data analysis, and cultural competency—skills that employers actively seek according to the National Association of Colleges and Employers (NACE).\n\nThese skills are applicable across various industries and roles, making graduates more adaptable and capable of handling diverse tasks. The BLS program's three concentrations—Global Perspectives, Health and Society, and Management Studies—are designed to align with the top fields adult learners are interested in, as identified by EduVentures in 2022. This alignment ensures that graduates are prepared for careers in business and management, public service, communication and media, learning and development, and more.\n\nMoreover, the interdisciplinary nature of the BLS program prepares students for in-demand management positions, as overall employment in management occupations is projected to grow faster than the average for all occupations from 2022 to 2032. The program also fosters critical thinking and problem-solving skills, which are essential for entrepreneurship and navigating complex workplace challenges.\n\nIn summary, employers appreciate the flexibility, adaptability, and comprehensive skill set that interdisciplinary degrees like the BLS provide, positioning graduates as strong candidates in a competitive job market.",
+      "answer": "Employers generally view interdisciplinary degrees positively, recognizing the broad and versatile skill sets they foster. The Bachelor of Liberal Studies (BLS) program at the University of Illinois exemplifies this by equipping students with skills such as communication, leadership, teamwork, critical thinking, data analysis, and cultural competency—attributes highly valued by employers according to the National Association of Colleges and Employers (NACE).\n\nThe BLS program's three concentrations—Global Perspectives, Health and Society, and Management Studies—are tailored to meet the interests of adult learners and align with industry demands. This ensures graduates are prepared for diverse careers in business, public service, communication, and more. The interdisciplinary approach also readies students for in-demand management roles, where employment is projected to grow faster than average from 2022 to 2032. Additionally, the program cultivates critical thinking and problem-solving abilities, essential for entrepreneurship and tackling complex workplace challenges.\n\nIn essence, employers appreciate the flexibility, adaptability, and comprehensive skill set that interdisciplinary degrees like the BLS provide, making graduates strong contenders in today's competitive job market.",
+      "ok": true,
+      "latency": 32.12,
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "timestamp": "2026-03-31T12:36:27"
+  }
+]

@@ -1,0 +1,103 @@
+api:
+  url: "https://chat.illinois.edu/api/chat-api/chat"
+  timeout: 180
+  temperature: 0.1
+
+architectures:
+  single_agent:
+    - config_id: "sa_gpt_oss"
+      display_name: "GPT-OSS 120B"
+      mode: "single_agent"
+      model: "gpt-oss:120b"
+
+    - config_id: "sa_deepseek"
+      display_name: "DeepSeek R1 32B"
+      mode: "single_agent"
+      model: "deepseek-r1:32b"
+
+    - config_id: "sa_qwen"
+      display_name: "Qwen 2.5 VL 72B"
+      mode: "single_agent"
+      model: "Qwen/Qwen2.5-VL-72B-Instruct"
+
+  dual_agent:
+    - config_id: "da_gpt_gpt"
+      display_name: "GPT-OSS Retriever → GPT-OSS Refiner"
+      mode: "dual_agent"
+      retriever_model: "gpt-oss:120b"
+      refiner_model: "gpt-oss:120b"
+
+    - config_id: "da_deepseek_deepseek"
+      display_name: "DeepSeek Retriever → DeepSeek Refiner"
+      mode: "dual_agent"
+      retriever_model: "deepseek-r1:32b"
+      refiner_model: "deepseek-r1:32b"
+
+    - config_id: "da_qwen_qwen"
+      display_name: "Qwen Retriever → Qwen Refiner"
+      mode: "dual_agent"
+      retriever_model: "Qwen/Qwen2.5-VL-72B-Instruct"
+      refiner_model: "Qwen/Qwen2.5-VL-72B-Instruct"
+
+    - config_id: "da_gemma_deepseek"
+      display_name: "Gemma Retriever → DeepSeek Refiner"
+      mode: "dual_agent"
+      retriever_model: "gemma3:27b"
+      refiner_model: "deepseek-r1:32b"
+
+evaluation:
+  scoring_dimensions:
+    - accuracy
+    - completeness
+    - grounding
+    - clarity
+    - tone
+    - formatting
+
+  # Heuristic scoring thresholds
+  min_useful_length: 80
+  ideal_length_min: 120
+  ideal_length_max: 800
+
+  bls_core_terms:
+    - "BLS"
+    - "Bachelor of Liberal Studies"
+    - "University of Illinois"
+    - "concentration"
+    - "online"
+    - "advisor"
+    - "credit"
+    - "LAS"
+    - "semester"
+    - "UIUC"
+    - "Urbana"
+    - "lasonline"
+    - "financial aid"
+    - "tuition"
+    - "graduation"
+    - "degree"
+    - "interdisciplinary"
+
+  # Known correct BLS facts for hallucination detection
+  known_facts:
+    email: "onlineBLS@illinois.edu"
+    address: "112 English Building"
+    street: "608 S Wright St"
+    city: "Urbana"
+    admissions_url: "lasonline.illinois.edu"
+
+  # Signals that indicate a non-answer (penalize for factual questions)
+  non_answer_signals:
+    - "I do not have that specific information"
+    - "I don't have that information"
+    - "NO_INFO_FOUND"
+    - "Please contact the BLS office"
+
+  # Signals that indicate an error response
+  error_signals:
+    - "ERROR:"
+    - "Error 4"
+    - "Error 5"
+    - "MODEL_UNAVAILABLE"
+    - "API authentication failed"
+    - "not found"

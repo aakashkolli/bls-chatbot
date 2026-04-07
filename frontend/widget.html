@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLS Virtual Advisor</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: transparent;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Full iframe area — widget is fixed inside */
+        }
+
+        /* ---- Floating bubble button ---- */
+        #chat-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #13294B;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            transition: background 0.2s, transform 0.15s;
+            z-index: 10;
+            font-size: 22px;
+        }
+        #chat-bubble:hover { background: #0f203b; transform: scale(1.07); }
+
+        /* ---- Chat panel ---- */
+        #chat-panel {
+            position: fixed;
+            bottom: 88px;
+            right: 20px;
+            width: 360px;
+            height: 500px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateY(20px) scale(0.97);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 9;
+        }
+        #chat-panel.open {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* ---- Panel header ---- */
+        .panel-header {
+            background: linear-gradient(135deg, #13294B 0%, #1f4b7a 100%);
+            color: white;
+            padding: 14px 16px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .header-title { font-size: 0.92em; font-weight: 700; letter-spacing: 0.02em; }
+        .header-sub { font-size: 0.75em; color: rgba(255,255,255,0.75); margin-top: 2px; }
+        .close-btn {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.8);
+            font-size: 20px;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0 2px;
+            transition: color 0.15s;
+        }
+        .close-btn:hover { color: white; }
+
+        /* ---- Messages area ---- */
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f8f9fb;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 9px 13px;
+            border-radius: 10px;
+            font-size: 0.88em;
+            line-height: 1.45;
+            word-break: break-word;
+        }
+        .bot-msg {
+            background: white;
+            color: #222;
+            align-self: flex-start;
+            border: 1px solid #e2e8f0;
+        }
+        .bot-msg p { margin: 0 0 5px; }
+        .bot-msg p:last-child { margin-bottom: 0; }
+        .bot-msg ul, .bot-msg ol { margin: 4px 0 5px 16px; padding: 0; }
+        .bot-msg li { margin-bottom: 2px; }
+        .user-msg {
+            background: #E84A27;
+            color: white;
+            align-self: flex-end;
+        }
+
+        /* Typing indicator */
+        .typing-bubble {
+            background: white;
+            border: 1px solid #e2e8f0;
+            align-self: flex-start;
+            padding: 10px 14px;
+            border-radius: 10px;
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .dot {
+            width: 6px; height: 6px;
+            background: #999;
+            border-radius: 50%;
+            animation: blink 1.4s infinite both;
+        }
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes blink {
+            0%, 80%, 100% { opacity: 0.4; }
+            40% { opacity: 1; }
+        }
+
+        /* ---- Input footer ---- */
+        .panel-footer {
+            border-top: 1px solid #e2e8f0;
+            background: white;
+            padding: 10px 12px;
+            flex-shrink: 0;
+        }
+        .input-row {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+        }
+        #user-input {
+            flex: 1;
+            padding: 8px 11px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 0.88em;
+            font-family: inherit;
+            outline: none;
+            resize: none;
+            max-height: 80px;
+            line-height: 1.4;
+        }
+        #user-input:focus { border-color: #13294B; }
+        .send-btn {
+            background: #13294B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 0.85em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.15s;
+            white-space: nowrap;
+        }
+        .send-btn:hover { background: #0f203b; }
+        .send-btn:disabled { background: #aaa; cursor: not-allowed; }
+        .footer-contact {
+            margin-top: 6px;
+            font-size: 0.75em;
+            color: #888;
+            text-align: center;
+        }
+        .footer-contact a { color: #13294B; text-decoration: none; }
+        .footer-contact a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<!-- Floating chat bubble -->
+<button id="chat-bubble" aria-label="Open BLS Virtual Advisor" onclick="togglePanel()">
+    💬
+</button>
+
+<!-- Chat panel -->
+<div id="chat-panel" role="dialog" aria-label="BLS Virtual Advisor chat">
+    <div class="panel-header">
+        <div>
+            <div class="header-title">BLS Virtual Advisor</div>
+            <div class="header-sub">University of Illinois Online</div>
+        </div>
+        <button class="close-btn" onclick="togglePanel()" aria-label="Close chat">×</button>
+    </div>
+
+    <div class="chat-messages" id="chat-messages"></div>
+
+    <div class="panel-footer">
+        <div class="input-row">
+            <textarea id="user-input" rows="1" placeholder="Ask about tuition, courses, admissions..."></textarea>
+            <button class="send-btn" id="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+        <div class="footer-contact">
+            Questions? <a href="mailto:bls@illinois.edu">bls@illinois.edu</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    const panel = document.getElementById('chat-panel');
+    const messagesEl = document.getElementById('chat-messages');
+    const inputEl = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+    let isOpen = false;
+
+    // Initial greeting
+    appendMessage('Hi! I\'m the BLS Virtual Advisor. Ask me about admissions, tuition, transfer credits, or anything about the Bachelor of Liberal Studies program.', 'bot-msg');
+
+    function togglePanel() {
+        isOpen = !isOpen;
+        panel.classList.toggle('open', isOpen);
+        document.getElementById('chat-bubble').textContent = isOpen ? '✕' : '💬';
+        if (isOpen) inputEl.focus();
+    }
+
+    inputEl.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+
+    async function sendMessage() {
+        const text = inputEl.value.trim();
+        if (!text || sendBtn.disabled) return;
+
+        appendMessage(text, 'user-msg');
+        inputEl.value = '';
+        sendBtn.disabled = true;
+
+        const typingEl = appendTyping();
+
+        try {
+            const res = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: text })
+            });
+            const data = await res.json();
+            removeEl(typingEl);
+            const answer = data.answer || ('Error: ' + (data.error || 'Unknown error'));
+            appendMessage(marked.parse(answer), 'bot-msg', true);
+        } catch {
+            removeEl(typingEl);
+            appendMessage('I could not reach the advisor service. Please contact <a href="mailto:bls@illinois.edu">bls@illinois.edu</a> for help.', 'bot-msg', true);
+        } finally {
+            sendBtn.disabled = false;
+            inputEl.focus();
+        }
+    }
+
+    function appendMessage(content, cls, isHTML = false) {
+        const div = document.createElement('div');
+        div.className = 'message ' + cls;
+        if (isHTML) div.innerHTML = content;
+        else div.textContent = content;
+        messagesEl.appendChild(div);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+        return div;
+    }
+
+    function appendTyping() {
+        const div = document.createElement('div');
+        div.className = 'typing-bubble';
+        div.innerHTML = '<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+        messagesEl.appendChild(div);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+        return div;
+    }
+
+    function removeEl(el) {
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+    }
+</script>
+</body>
+</html>

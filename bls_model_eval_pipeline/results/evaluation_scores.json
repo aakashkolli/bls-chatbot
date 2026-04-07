@@ -1,0 +1,138 @@
+{
+  "single_agent": {
+    "sa_gpt_oss": {
+      "config_id": "sa_gpt_oss",
+      "n_questions": 54,
+      "n_errors": 53,
+      "avg_latency": 0.58,
+      "total_tokens": 0,
+      "scores": {
+        "accuracy": 1.06,
+        "completeness": 1.06,
+        "grounding": 1.07,
+        "clarity": 1.06,
+        "tone": 1.06,
+        "formatting": 1.06,
+        "average": 1.06
+      },
+      "top_issues": [
+        "Model unavailable / API error",
+        "Model unavailable or API error"
+      ]
+    },
+    "sa_deepseek": {
+      "config_id": "sa_deepseek",
+      "n_questions": 50,
+      "n_errors": 34,
+      "avg_latency": 5.62,
+      "total_tokens": 0,
+      "scores": {
+        "accuracy": 2.08,
+        "completeness": 2.26,
+        "grounding": 2.22,
+        "clarity": 1.8,
+        "tone": 2.14,
+        "formatting": 1.56,
+        "average": 2.01
+      },
+      "top_issues": [
+        "Model unavailable / API error",
+        "Model unavailable or API error",
+        "Non-answer / deferred to office"
+      ]
+    },
+    "sa_qwen": {
+      "config_id": "sa_qwen",
+      "n_questions": 10,
+      "n_errors": 0,
+      "avg_latency": 5.99,
+      "total_tokens": 0,
+      "scores": {
+        "accuracy": 4.3,
+        "completeness": 4.4,
+        "grounding": 5.0,
+        "clarity": 3.5,
+        "tone": 3.8,
+        "formatting": 2.4,
+        "average": 3.9
+      },
+      "top_issues": []
+    }
+  },
+  "dual_agent": {
+    "da_gpt_gpt": {
+      "config_id": "da_gpt_gpt",
+      "n_questions": 10,
+      "n_errors": 0,
+      "avg_latency": 15.25,
+      "total_tokens": 0,
+      "scores": {
+        "accuracy": 4.7,
+        "completeness": 4.8,
+        "grounding": 5.0,
+        "clarity": 4.0,
+        "tone": 3.8,
+        "formatting": 4.0,
+        "average": 4.38
+      },
+      "top_issues": [
+        "Non-answer / deferred to office"
+      ]
+    },
+    "da_deepseek_deepseek": {
+      "config_id": "da_deepseek_deepseek",
+      "n_questions": 10,
+      "n_errors": 0,
+      "avg_latency": 38.16,
+      "total_tokens": 0,
+      "scores": {
+        "accuracy": 4.4,
+        "completeness": 4.5,
+        "grounding": 4.6,
+        "clarity": 3.9,
+        "tone": 4.1,
+        "formatting": 3.3,
+        "average": 4.13
+      },
+      "top_issues": [
+        "Non-answer / deferred to office"
+      ]
+    },
+    "da_qwen_qwen": {
+      "config_id": "da_qwen_qwen",
+      "n_questions": 10,
+      "n_errors": 0,
+      "avg_latency": 23.11,
+      "total_tokens": 0,
+      "scores": {
+        "accuracy": 4.2,
+        "completeness": 4.9,
+        "grounding": 4.9,
+        "clarity": 3.4,
+        "tone": 4.2,
+        "formatting": 3.0,
+        "average": 4.1
+      },
+      "top_issues": []
+    },
+    "da_gemma_deepseek": {
+      "config_id": "da_gemma_deepseek",
+      "n_questions": 10,
+      "n_errors": 0,
+      "avg_latency": 38.51,
+      "total_tokens": 0,
+      "scores": {
+        "accuracy": 4.5,
+        "completeness": 4.8,
+        "grounding": 4.6,
+        "clarity": 3.8,
+        "tone": 3.8,
+        "formatting": 3.4,
+        "average": 4.15
+      },
+      "top_issues": [
+        "Non-answer / deferred to office"
+      ]
+    }
+  }
+}

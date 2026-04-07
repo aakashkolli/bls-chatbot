@@ -1,3 +1,23 @@
+# Ignore BLS Info folder (don't push)
+BLS Info for AI_ML Interns SP26/
+
+# Ignore all markdown files (do not push any .md files)
+*.md
+
+# Common Python/OS ignores
+__pycache__/
+*.py[cod]
+.Python
+env/
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+
+# Node / frontend
+node_modules/
+dist/
+.next/
 # Ignore Python virtual environments
 venv/
 
