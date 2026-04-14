@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//var/folders/m1/5th30zgj7m94d6tq6112hb5w0000gn/T/TemporaryItems/NSIRD_screencaptureui_s4reNT/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:5000/)"
+    ]
+  }
+}
