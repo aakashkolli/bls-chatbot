@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "timestamp": "2026-04-14T03:50:47.046354Z",
+    "models": [
+      "gemini-3.1-flash-lite-preview"
+    ],
+    "question_keys": [
+      "Prospective Student Questions|General|1",
+      "Prospective Student Questions|General|2",
+      "Prospective Student Questions|General|4",
+      "Prospective Student Questions|Admissions|5",
+      "Prospective Student Questions|Admissions|6",
+      "Prospective Student Questions|Admissions|8",
+      "Prospective Student Questions|Admissions|9",
+      "Prospective Student Questions|Academics|11",
+      "Prospective Student Questions|Academics|14",
+      "Prospective Student Questions|Academics|13",
+      "Prospective Student Questions|Cost & Financial Aid|18",
+      "Prospective Student Questions|Cost & Financial Aid|20",
+      "Prospective Student Questions|Cost & Financial Aid|22",
+      "Current Student Questions|Advising & Registration|1",
+      "Current Student Questions|Policies|8",
+      "More Subjective/Open-Ended Questions||1",
+      "More Subjective/Open-Ended Questions||3",
+      "More Subjective/Open-Ended Questions||4",
+      "More Subjective/Open-Ended Questions||13",
+      "More Subjective/Open-Ended Questions||15"
+    ],
+    "admissions_faq_url": "https://lasonline.illinois.edu/programs/bls/admissions/#faq",
+    "program_url": "https://lasonline.illinois.edu/programs/bls/"
+  },
+  "summary": {
+    "gemini-3.1-flash-lite-preview": {
+      "questions": 20,
+      "single_ok_count": 9,
+      "dual_ok_count": 4,
+      "single_violations": {},
+      "dual_violations": {}
+    }
+  },
+  "runs": [
+    {
+      "model": "gemini-3.1-flash-lite-preview",
+      "rows": [
+        {
+          "question_key": "Prospective Student Questions|General|1",
+          "question": "What is the Bachelor of Liberal Studies (BLS) degree?",
+          "single": {
+            "answer": "The Bachelor of Liberal Studies (BLS) at the University of Illinois is an online, asynchronous degree program designed for students seeking a flexible, interdisciplinary education. The curriculum emphasizes focused, broad-based learning that allows you to engage with a variety of academic perspectives while working toward your degree.\n\nKey details about the program include:\n\n*   **Format:** Courses are delivered online and asynchronously, providing flexibility for your schedule while maintaining the structure of standard academic terms.\n*   **Curriculum:** The program offers a multidisciplinary approach. You can find information regarding current concentrations and course offerings on the [program page](https://lasonline.illinois.edu/programs/bls/).\n*   **Degree Requirements:** The program requires the completion of specific credit hours to graduate. \n*   **Transfer Credit:** The university accepts transfer credit toward the degree when it is supported by official transcripts and meets program requirements.\n*   **Admissions:** For the most current information regarding deadlines, requirements, and key dates, please consult the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq).\n\nIf you have specific questions about the application process or your individual academic standing, please contact the Office of Undergraduate Admissions or reach out to our team at onlineBLS@illinois.edu.",
+            "latency": 25.12,
+            "ok": true,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "The Bachelor of Liberal Studies (BLS) is an online, asynchronous degree program offered by the University of Illinois. It is designed to provide students with a focused, interdisciplinary learning experience that allows for flexibility in coursework.\n\nKey features of the program include:\n\n*   **Structure:** The program is delivered entirely online and follows an asynchronous format, allowing students to engage with course materials on their own schedule within the bounds of the semester.\n*   **Curriculum:** The BLS curriculum emphasizes interdisciplinary study. You can find detailed information regarding current program concentrations and course offerings on the [program page](https://lasonline.illinois.edu/programs/bls/).\n*   **Degree Requirements:** The degree is comprised of a specific number of credit hours. For details regarding admission requirements, prerequisites, and transfer credit policies, please consult the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq).\n*   **Admissions Support:** For questions regarding your specific academic background, the application process, or enrollment, please contact the Office of Undergraduate Admissions or email onlineBLS@illinois.edu for further guidance.",
+            "latency": 24.08,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:42:10"
+        },
+        {
+          "question_key": "Prospective Student Questions|General|2",
+          "question": "Who is the BLS program designed for?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 2.08,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 10.64,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:42:23"
+        },
+        {
+          "question_key": "Prospective Student Questions|General|4",
+          "question": "How is BLS different from other LAS majors?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 0.85,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "API_REQUEST_FAILED: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+            "latency": 30.57,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:42:55"
+        },
+        {
+          "question_key": "Prospective Student Questions|Admissions|5",
+          "question": "What are the admission requirements?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 1.13,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 1.43,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:42:58"
+        },
+        {
+          "question_key": "Prospective Student Questions|Admissions|6",
+          "question": "Can I transfer credits? How many?",
+          "single": {
+            "answer": "Yes, the Bachelor of Liberal Studies (BLS) program accepts transfer credits from accredited institutions. \n\nRegarding your specific transfer questions:\n\n*   **Evaluation:** Transfer credit is accepted when supported by official transcripts and evaluated for applicability to the degree requirements.\n*   **Credit Hour Requirements:** The program requires a minimum of 120 credit hours to graduate. You can review the structure of the degree and requirements for the major on the [program page](https://lasonline.illinois.edu/programs/bls/).\n*   **Admissions Process:** Specific details regarding how credits are applied and the transfer admissions process are available in the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq).\n\nFor personalized guidance regarding your academic history or the transfer application process, please contact the Office of Undergraduate Admissions or reach out to our team at onlineBLS@illinois.edu.",
+            "latency": 14.47,
+            "ok": true,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_REQUEST_FAILED: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+            "answer": "The Bachelor of Liberal Studies (BLS) program accepts transfer credits from accredited institutions. The specific number of credits that may be applied toward your degree is determined on an individual basis during the formal application review process, as it depends on how your prior coursework aligns with University of Illinois degree requirements.\n\nFor more information regarding the application process and how your previous studies may be evaluated, please review the resources below:\n\n*   **Admissions FAQ:** Visit the [Admissions FAQ page](https://lasonline.illinois.edu/programs/bls/admissions/#faq) for details on transfer policies and application requirements.\n*   **Program Overview:** You can learn more about the program structure and curriculum on the [BLS program page](https://lasonline.illinois.edu/programs/bls/).\n\nIf you have specific questions about your academic history that are not addressed in the provided materials, please contact the Office of Undergraduate Admissions or reach out to the program team at onlineBLS@illinois.edu.",
+            "latency": 37.56,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:43:50"
+        },
+        {
+          "question_key": "Prospective Student Questions|Admissions|8",
+          "question": "Is there a minimum GPA requirement?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 1.42,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "QUESTION_BREAKDOWN:\n- Is there a minimum GPA requirement for admission to the BLS program?\n\nFACTS_FOUND:\n- [fact: The BLS program does not have a minimum GPA requirement for admission. Applicants must have completed at least 30 transferable hours from an accredited institution. | Admissions FAQ]\n\nCOURSE_CODES:\n- NO_INFO_FOUND\n\nPOLICY_NUMBERS:\n- NO_INFO_FOUND\n\nCONTACT_DATA:\n- [contact: las-online@illinois.edu | Admissions FAQ]\n\nMISSING_FIELDS:\n- None\n\nSOURCE_SUMMARY:\n- [Admissions FAQ : confirms absence of minimum GPA requirement and specifies transfer credit minimums.]",
+            "answer": "Thank you for your interest in the Bachelor of Liberal Studies (BLS) program.\n\nThere is no minimum GPA requirement for admission to the BLS program. To be considered for admission, applicants must have completed at least 30 transferable credit hours from an accredited institution.\n\nFor further details regarding admission requirements and the application process, please review the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq). If you have specific questions about your academic history, you may reach out to the Office of Undergraduate Admissions or contact us at onlineBLS@illinois.edu.",
+            "latency": 18.7,
+            "ok": true,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:44:10"
+        },
+        {
+          "question_key": "Prospective Student Questions|Admissions|9",
+          "question": "When are application deadlines?",
+          "single": {
+            "answer": "To find the most current application deadlines for the Bachelor of Liberal Studies program, please visit our Admissions FAQ page at https://lasonline.illinois.edu/programs/bls/admissions/#faq.\n\nIf you have additional questions regarding your application or the admissions process, please contact the Office of Undergraduate Admissions or email our team at onlineBLS@illinois.edu.",
+            "latency": 5.21,
+            "ok": true,
+            "violations": []
+          },
+          "dual": {
+            "draft": "QUESTION_BREAKDOWN:\n- When are the application deadlines for the BLS program?\n\nFACTS_FOUND:\n- The BLS program accepts applications on a rolling basis; there are no set deadlines | Admissions FAQ\n\nCOURSE_CODES:\n- NO_INFO_FOUND\n\nPOLICY_NUMBERS:\n- NO_INFO_FOUND\n\nCONTACT_DATA:\n- Contact LAS Online via the provided web resources | Program page\n\nMISSING_FIELDS:\n- None\n\nSOURCE_SUMMARY:\n- Admissions FAQ: States that applications are accepted on a rolling basis with no specific deadlines.",
+            "answer": "The Bachelor of Liberal Studies (BLS) program accepts applications on a rolling basis, meaning there are no set application deadlines. \n\nFor the most up-to-date information regarding the application process and current requirements, please visit the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq). You can also find additional program details on the [BLS program page](https://lasonline.illinois.edu/programs/bls/). \n\nIf you have specific questions about your application, please reach out to the Office of Undergraduate Admissions or contact us at onlineBLS@illinois.edu.",
+            "latency": 7.81,
+            "ok": true,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:44:23"
+        },
+        {
+          "question_key": "Prospective Student Questions|Academics|11",
+          "question": "What concentrations are available?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 0.44,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "API_REQUEST_FAILED: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+            "latency": 31.84,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:44:56"
+        },
+        {
+          "question_key": "Prospective Student Questions|Academics|14",
+          "question": "Are there required courses?",
+          "single": {
+            "answer": "The Bachelor of Liberal Studies (BLS) program is designed to provide a focused, interdisciplinary learning experience. \n\nRegarding required courses:\n\n*   The BLS curriculum consists of 120 credit hours in total.\n*   The program is delivered in an online and asynchronous format.\n*   Because requirements can vary based on individual academic history and transfer credit, please review the specific course structures and curriculum details on the [program page](https://lasonline.illinois.edu/programs/bls/).\n*   If you have questions regarding your specific academic path or how your previous coursework may apply, please contact the Office of Undergraduate Admissions or reach out to us at onlineBLS@illinois.edu.\n\nFor the most current information regarding degree requirements and general policies, you may also consult the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq).",
+            "latency": 5.98,
+            "ok": true,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_REQUEST_FAILED: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+            "answer": "The Bachelor of Liberal Studies (BLS) program offers a flexible, interdisciplinary curriculum designed to help you meet your academic and professional goals.\n\nRegarding required coursework:\n\n*   The program requires the completion of 120 total credit hours.\n*   Because the BLS curriculum is built to be interdisciplinary, specific course requirements and concentration options vary based on your academic path and individual credit history.\n*   For the most accurate and up-to-date information regarding current course offerings and program structure, please visit the [program page](https://lasonline.illinois.edu/programs/bls/).\n\nIf you have specific questions about how your previous coursework may apply to these requirements, please contact the Office of Undergraduate Admissions or reach out to us at onlineBLS@illinois.edu for further guidance.",
+            "latency": 37.27,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:45:39"
+        },
+        {
+          "question_key": "Prospective Student Questions|Academics|13",
+          "question": "How long does it take to complete the degree?",
+          "single": {
+            "answer": "The Bachelor of Liberal Studies (BLS) program is designed as an online and asynchronous degree, allowing you to engage with course materials on a schedule that fits your commitments.\n\nBecause the time required to complete the degree depends on your individual academic background, such as the number of transfer credit hours you bring into the program, there is no set timeframe for completion. \n\nTo help you plan your path to graduation, please consider the following:\n\n*   **Degree Requirements:** The program requires the completion of 120 total credit hours.\n*   **Transfer Credit:** The program accepts transfer credit from accredited institutions; once you apply, the Office of Undergraduate Admissions will review your previous coursework to determine how it applies toward your degree.\n*   **Program Details:** You can find more information about the curriculum and current offerings on the [program page](https://lasonline.illinois.edu/programs/bls/).\n*   **Admissions Guidance:** For specific questions regarding your academic history or the application process, please consult the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq).\n\nIf you have additional questions regarding your specific situation, please reach out to the program team at onlineBLS@illinois.edu.",
+            "latency": 5.38,
+            "ok": true,
+            "violations": []
+          },
+          "dual": {
+            "draft": "QUESTION_BREAKDOWN:\n- What is the estimated time to completion for the BLS degree?\n\nFACTS_FOUND:\n- NO_INFO_FOUND\n\nCOURSE_CODES:\n- NO_INFO_FOUND\n\nPOLICY_NUMBERS:\n- NO_INFO_FOUND\n\nCONTACT_DATA:\n- Contact LAS Online via the BLS program website for specific degree planning inquiries.\n\nMISSING_FIELDS:\n- Estimated time to completion (years/semesters).\n\nSOURCE_SUMMARY:\n- BLS Program Page: Provides overview of the degree, curriculum, and admissions requirements.\n- Admissions FAQ: Addresses application process and eligibility requirements; does not specify time to completion.",
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 8.94,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:45:54"
+        },
+        {
+          "question_key": "Prospective Student Questions|Cost & Financial Aid|18",
+          "question": "What is the tuition cost?",
+          "single": {
+            "answer": "For the most accurate and current information regarding tuition and fees for the Bachelor of Liberal Studies program, please visit our [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq). \n\nTuition rates are subject to university policy and may be updated periodically. If you have specific questions about your financial planning or billing, you may reach out to us directly at onlineBLS@illinois.edu.",
+            "latency": 6.56,
+            "ok": true,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 1.31,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:46:02"
+        },
+        {
+          "question_key": "Prospective Student Questions|Cost & Financial Aid|20",
+          "question": "Is financial aid available for part-time students?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 1.66,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "Thank you for your interest in the Bachelor of Liberal Studies (BLS) program.\n\nRegarding your question about financial aid for part-time students, specific details regarding financial aid eligibility for your individual situation are not available in our current materials. \n\nTo receive the most accurate information regarding financial aid, please take the following steps:\n\n*   **Review the Admissions FAQ:** You can find comprehensive information regarding admissions and program policies at the [Admissions FAQ page](https://lasonline.illinois.edu/programs/bls/admissions/#faq).\n*   **Contact the Office of Undergraduate Admissions:** For direct assistance with your specific status and financial aid inquiries, please reach out to the Office of Undergraduate Admissions.\n*   **Direct Inquiry:** If you need further assistance, you may also email the program team at onlineBLS@illinois.edu.\n\nFor additional information on our online, asynchronous curriculum and the interdisciplinary nature of the degree, please visit the [BLS program page](https://lasonline.illinois.edu/programs/bls/).",
+            "latency": 14.08,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:46:18"
+        },
+        {
+          "question_key": "Prospective Student Questions|Cost & Financial Aid|22",
+          "question": "Does the BLS program accept the U of I employee tuition waiver?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 1.21,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_REQUEST_FAILED: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 46.94,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:47:06"
+        },
+        {
+          "question_key": "Current Student Questions|Advising & Registration|1",
+          "question": "How do I schedule an advising appointment?",
+          "single": {
+            "answer": "To schedule an advising appointment, please contact the Office of Undergraduate Admissions. They can provide guidance on your next steps and assist with any questions regarding your application or program requirements.\n\nFor the most current information regarding the admissions process and frequently asked questions, please visit the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq). If you have additional questions, you may also reach out directly to the program team at onlineBLS@illinois.edu.",
+            "latency": 22.63,
+            "ok": true,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "To schedule an advising appointment or receive guidance regarding the Bachelor of Liberal Studies (BLS) program, please contact the Office of Undergraduate Admissions. They can assist with questions regarding your application, academic planning, or program requirements.\n\nFor additional information and common inquiries, you may also consult the following resources:\n\n*   **Admissions FAQ:** For current details on deadlines and admissions processes, please visit the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq).\n*   **Program Overview:** For general information about the online, asynchronous curriculum and the interdisciplinary nature of the BLS degree, please visit the [program page](https://lasonline.illinois.edu/programs/bls/).\n\nIf you require further assistance, you may reach out directly to the program team at onlineBLS@illinois.edu.",
+            "latency": 18.45,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:47:47"
+        },
+        {
+          "question_key": "Current Student Questions|Policies|8",
+          "question": "What is the GPA requirement to stay in good standing?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 8.94,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "QUESTION_BREAKDOWN:\n- What is the GPA requirement to stay in good standing for the Bachelor of Liberal Studies (BLS) program?\n\nFACTS_FOUND:\n- NO_INFO_FOUND | The provided sources do not specify the GPA requirement for maintaining good standing within the BLS program.\n\nCOURSE_CODES:\n- NO_INFO_FOUND\n\nPOLICY_NUMBERS:\n- NO_INFO_FOUND\n\nCONTACT_DATA:\n- Contact LAS Online at lasonline@illinois.edu for specific academic standing inquiries.\n\nMISSING_FIELDS:\n- GPA requirement for good academic standing.\n\nSOURCE_SUMMARY:\n- Admissions FAQ : Provides application and admission criteria, but does not detail ongoing academic standing policies.\n- Program page : Provides general overview of the BLS degree, but does not detail ongoing academic standing policies.",
+            "answer": "The information regarding specific GPA requirements for maintaining good academic standing is not currently available in our online materials. \n\nFor the most accurate and up-to-date information regarding academic policies, please reach out to the LAS Online team directly at onlineBLS@illinois.edu. They will be able to provide the current standards for your progress in the program.",
+            "latency": 26.09,
+            "ok": true,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:48:23"
+        },
+        {
+          "question_key": "More Subjective/Open-Ended Questions||1",
+          "question": "Will this degree feel legitimate compared to traditional majors?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 0.77,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "The Bachelor of Liberal Studies (BLS) program at the University of Illinois Urbana-Champaign is a fully accredited degree that offers a focused, interdisciplinary approach to learning. \n\nStudents in the BLS program engage with the same academic rigor and faculty expertise found across the university. The curriculum is designed to provide a cohesive educational experience tailored to your academic goals. Key features of the program include:\n\n*   **Structure:** The program is delivered entirely online and is asynchronous, providing a flexible environment for your coursework.\n*   **Curriculum:** You will develop a broad academic foundation through interdisciplinary study. You can review the current course offerings and program structure on the [BLS program page](https://lasonline.illinois.edu/programs/bls/).\n*   **Transfer Credits:** The university accepts transfer credit when supported by official documentation and academic evaluation.\n\nIf you have specific questions regarding the application process or academic requirements, please visit the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq). For additional guidance, you may contact the Office of Undergraduate Admissions or reach out to us at onlineBLS@illinois.edu.",
+            "latency": 16.33,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:48:40"
+        },
+        {
+          "question_key": "More Subjective/Open-Ended Questions||3",
+          "question": "Is BLS a good option if I'm returning to school after many years?",
+          "single": {
+            "answer": "The Bachelor of Liberal Studies (BLS) is designed for students who are ready to complete their degree through an online, asynchronous format. This program offers a focused, interdisciplinary approach to learning, allowing you to integrate diverse academic perspectives into your education.\n\nIf you are considering returning to school, please keep the following in mind:\n\n*   **Program Structure:** The BLS is delivered entirely online and is asynchronous, meaning you engage with course materials on your own schedule while meeting course deadlines.\n*   **Transfer Credit:** We accept transfer credit toward the degree when supported by your official transcripts. \n*   **Curriculum:** The program emphasizes interdisciplinary study. You can view current concentration options and academic requirements on our [program page](https://lasonline.illinois.edu/programs/bls/).\n*   **Admissions Process:** For specific questions regarding your application or the enrollment process, please review our [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq).\n\nIf you have additional questions regarding your specific academic background, please contact the Office of Undergraduate Admissions or email us directly at onlineBLS@illinois.edu.",
+            "latency": 7.07,
+            "ok": true,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 17.23,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:49:04"
+        },
+        {
+          "question_key": "More Subjective/Open-Ended Questions||4",
+          "question": "How flexible is the program if I work full-time?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 5.51,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "QUESTION_BREAKDOWN:\n- Is the BLS program designed for students who work full-time?\n- What are the structural delivery methods of the program regarding schedule flexibility?\n\nFACTS_FOUND:\n- The Bachelor of Liberal Studies (BLS) program is designed for students balancing work and personal commitments | https://lasonline.illinois.edu/programs/bls/\n- The program is offered 100% online | https://lasonline.illinois.edu/programs/bls/\n- Courses are delivered asynchronously, allowing students to access materials and complete coursework on their own schedules | https://lasonline.illinois.edu/programs/bls/admissions/#faq\n\nCOURSE_CODES:\n- NO_INFO_FOUND\n\nPOLICY_NUMBERS:\n- NO_INFO_FOUND\n\nCONTACT_DATA:\n- las-online@illinois.edu | https://lasonline.illinois.edu/programs/bls/\n\nMISSING_FIELDS:\n- Specific credit-hour requirements per semester for \"full-time\" versus \"part-time\" status.\n\nSOURCE_SUMMARY:\n- Program page: Confirms 100% online delivery and alignment with balancing work/personal commitments.\n- Admissions FAQ: Confirms asynchronous course structure.",
+            "answer": "The Bachelor of Liberal Studies (BLS) program is designed to accommodate students who are balancing professional and personal commitments. \n\nKey details regarding the structure of the program include:\n\n*   **100% Online Delivery:** The entire curriculum is offered online, providing the flexibility to study from any location.\n*   **Asynchronous Format:** Courses are delivered asynchronously. This means that while you will still meet assignment deadlines, you are not required to log in at specific times for live lectures, allowing you to engage with course materials on a schedule that fits your needs.\n*   **Program Planning:** Information regarding enrollment status, such as credit hour requirements for part-time or full-time designation, can be found in our [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq).\n\nYou can learn more about the program structure and curriculum on the [BLS program page](https://lasonline.illinois.edu/programs/bls/). If you have additional questions regarding your specific academic planning, please contact the Office of Undergraduate Admissions or reach out to us at onlineBLS@illinois.edu.",
+            "latency": 36.3,
+            "ok": true,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:49:46"
+        },
+        {
+          "question_key": "More Subjective/Open-Ended Questions||13",
+          "question": "Can BLS help me pivot industries?",
+          "single": {
+            "answer": "The Bachelor of Liberal Studies (BLS) program at the University of Illinois is designed to provide focused, interdisciplinary learning that can help you strengthen your professional profile. By developing essential skills in communication, critical thinking, and complex problem-solving, the program allows you to apply a broad academic background to various career fields.\n\nWhether you are seeking to transition into a new industry or advance in your current one, the BLS program provides a structured way to build upon your prior educational experience.\n\n*   **Curriculum:** The program is entirely online and asynchronous, offering the flexibility to earn your degree while managing other commitments.\n*   **Academic Planning:** You can explore the specific structure of the degree and current concentrations on the [program page](https://lasonline.illinois.edu/programs/bls/).\n*   **Transfer Credits:** The university accepts transfer credit when supported by official documentation; please consult the [Admissions FAQ](https://lasonline.illinois.edu/programs/bls/admissions/#faq) for guidance on the admissions process.\n\nIf you have specific questions regarding how your previous coursework aligns with the degree requirements, please contact the Office of Undergraduate Admissions or reach out to us at onlineBLS@illinois.edu for further assistance.",
+            "latency": 8.43,
+            "ok": true,
+            "violations": []
+          },
+          "dual": {
+            "draft": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 6.38,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:50:02"
+        },
+        {
+          "question_key": "More Subjective/Open-Ended Questions||15",
+          "question": "How do employers view interdisciplinary degrees?",
+          "single": {
+            "answer": "API_ERROR_503: {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+            "latency": 0.56,
+            "ok": false,
+            "violations": []
+          },
+          "dual": {
+            "draft": "QUESTION_BREAKDOWN:\n- How do employers view interdisciplinary degrees?\n\nFACTS_FOUND:\n- NO_INFO_FOUND\n\nCOURSE_CODES:\n- NO_INFO_FOUND\n\nPOLICY_NUMBERS:\n- NO_INFO_FOUND\n\nCONTACT_DATA:\n- NO_INFO_FOUND\n\nMISSING_FIELDS:\n- Employer perception of interdisciplinary degrees.\n\nSOURCE_SUMMARY:\n- Admissions FAQ : Information regarding application requirements, transfer credits, and degree format.\n- Program page : Overview of the Bachelor of Liberal Studies curriculum, focus areas, and general program structure.",
+            "answer": "API_REQUEST_FAILED: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+            "latency": 44.05,
+            "ok": false,
+            "violations": []
+          },
+          "timestamp": "2026-04-13T22:50:46"
+        }
+      ]
+    }
+  ]
+}

@@ -1,274 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLS Virtual Advisor</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px 10px;
-            box-sizing: border-box;
-        }
-        .main-wrapper {
-            width: 100%;
-            max-width: 720px;
-            display: flex;
-            flex-direction: column;
-        }
-        .chat-header {
-            background: #13294B;
-            color: white;
-            padding: 13px 20px;
-            font-size: 0.95em;
-            font-weight: bold;
-            letter-spacing: 0.03em;
-            border-radius: 10px 10px 0 0;
-        }
-        .chat-container {
-            background: white;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            height: 80vh;
-        }
-        .mode-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 15px 0;
-            font-size: 0.88em;
-            color: #555;
-        }
-        .mode-bar label { font-weight: bold; color: #13294B; white-space: nowrap; }
-        .mode-select {
-            flex: 1;
-            padding: 5px 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 0.9em;
-            color: #13294B;
-            background: #f9fafb;
-            cursor: pointer;
-        }
-        .greeting {
-            background: #e2e8f0;
-            color: #13294B;
-            border-radius: 8px;
-            padding: 12px 18px;
-            margin-bottom: 10px;
-            font-size: 1.05em;
-            text-align: center;
-        }
-        .examples {
-            background: #f9fafb;
-            border-radius: 8px;
-            padding: 10px 18px;
-            margin-bottom: 15px;
-            font-size: 0.98em;
-            color: #333;
-        }
-        .examples-title {
-            font-weight: bold;
-            color: #13294B;
-            margin-bottom: 6px;
-        }
-        .example-question {
-            background: #e2e8f0;
-            border-radius: 5px;
-            padding: 7px 12px;
-            margin: 4px 0;
-            cursor: pointer;
-            color: #13294B;
-            transition: background 0.2s;
-        }
-        .example-question:hover { background: #dbeafe; }
-        .dots {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: auto;
-            height: 18px;
-        }
-        .dot {
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            margin: 0 4px;
-            background: #888;
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: blink 1.4s infinite both;
-        }
-        .dot:nth-child(2) { animation-delay: 0.2s; }
-        .dot:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes blink {
-            0%, 80%, 100% { opacity: 0.5; }
-            40% { opacity: 1; }
-        }
-        .chat-box {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .message {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 8px;
-            line-height: 1.4;
-        }
-        .user-msg {
-            background-color: #E84A27;
-            color: white;
-            align-self: flex-end;
-        }
-        .bot-msg {
-            background-color: #e2e8f0;
-            color: #333;
-            align-self: flex-start;
-        }
-        .input-area {
-            display: flex;
-            padding: 15px;
-            border-top: 1px solid #ddd;
-        }
-        input[type="text"] {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-        }
-        button {
-            background-color: #13294B;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-left: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover { background-color: #0f203b; }
-        .typing-indicator {
-            background-color: #e2e8f0;
-            color: #333;
-            align-self: flex-start;
-            display: flex;
-            align-items: center;
-            min-width: 60px;
-            min-height: 28px;
-            padding: 10px 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLS Virtual Advisor · University of Illinois</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #13294B;
+      --navy-dark: #0f203b;
+      --navy-light: #1c3f72;
+      --orange: #E84A27;
+      --orange-dark: #c93d20;
+      --bg: #f0f2f7;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --muted: #64748b;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ── Layout ───────────────────────────────────────── */
+    .app {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 16px 16px;
+    }
+
+    /* ── Top bar ──────────────────────────────────────── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 0 14px;
+      flex-shrink: 0;
+    }
+    .topbar-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(19,41,75,0.25);
+    }
+    .topbar-text { flex: 1; }
+    .topbar-title {
+      font-size: 1.05em;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .topbar-sub { font-size: 0.78em; color: var(--muted); margin-top: 1px; }
+    .online-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.75em;
+      font-weight: 600;
+      color: #166534;
+      flex-shrink: 0;
+    }
+    .online-dot {
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: online-pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes online-pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    /* ── Chat card ────────────────────────────────────── */
+    .chat-card {
+      flex: 1;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07), 0 1px 6px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    /* ── Agent pipeline bar ───────────────────────────── */
+    #agent-bar {
+      background: linear-gradient(90deg, #eef2ff 0%, #f0fdf4 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+      display: none;
+      align-items: center;
+      gap: 0;
+      flex-shrink: 0;
+    }
+    #agent-bar.visible { display: flex; }
+
+    .pipeline { display: flex; align-items: center; flex: 1; }
+    .agent-chip {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.79em;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .chip-a { background: rgba(19,41,75,0.08); color: var(--navy); opacity: 0.35; }
+    .chip-b { background: rgba(232,74,39,0.08); color: #c43a1d; opacity: 0.35; }
+    .agent-chip.is-active { opacity: 1; }
+    .agent-chip.is-done   { opacity: 0.5; }
+
+    .chip-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+    .agent-chip.is-active .chip-dot {
+      animation: dot-pulse 0.9s ease-in-out infinite;
+    }
+    @keyframes dot-pulse {
+      0%,100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.6); opacity: 0.4; }
+    }
+
+    .pipe-sep { color: #94a3b8; padding: 0 8px; font-size: 0.9em; }
+
+    .agent-desc {
+      flex: 1;
+      text-align: right;
+      font-size: 0.76em;
+      color: var(--muted);
+      padding-left: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Messages ─────────────────────────────────────── */
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 20px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #f7f8fb;
+      scroll-behavior: smooth;
+    }
+    .messages::-webkit-scrollbar { width: 5px; }
+    .messages::-webkit-scrollbar-track { background: transparent; }
+    .messages::-webkit-scrollbar-thumb { background: #dde3ee; border-radius: 3px; }
+
+    .msg-row { display: flex; flex-direction: column; }
+    .msg-row.user { align-items: flex-end; }
+    .msg-row.bot  { align-items: flex-start; }
+
+    .message {
+      max-width: 72%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 0.9em;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+    .bot-msg {
+      background: white;
+      color: var(--text);
+      border: 1px solid #e8edf5;
+      border-radius: 4px 18px 18px 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .bot-msg p { margin: 0 0 8px; }
+    .bot-msg p:last-child { margin-bottom: 0; }
+    .bot-msg ul, .bot-msg ol { margin: 6px 0 8px 20px; }
+    .bot-msg li { margin-bottom: 4px; }
+    .bot-msg strong { color: #0f172a; }
+    .bot-msg a { color: var(--navy); }
+    .bot-msg code { background: #f1f5f9; padding: 1px 6px; border-radius: 4px; font-size: 0.88em; }
+
+    .user-msg {
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      color: white;
+      border-radius: 18px 4px 18px 18px;
+      box-shadow: 0 3px 14px rgba(232,74,39,0.25);
+    }
+
+    .msg-time {
+      font-size: 0.7em;
+      color: #94a3b8;
+      margin-top: 5px;
+      padding: 0 4px;
+    }
+
+    /* Typing indicator */
+    .typing-bubble {
+      background: white;
+      border: 1px solid #e8edf5;
+      border-radius: 4px 18px 18px 18px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .dot {
+      width: 7px; height: 7px;
+      background: #94a3b8;
+      border-radius: 50%;
+      animation: dot-bounce 1.4s ease-in-out infinite both;
+    }
+    .dot:nth-child(2) { animation-delay: 0.18s; }
+    .dot:nth-child(3) { animation-delay: 0.36s; }
+    @keyframes dot-bounce {
+      0%,80%,100% { transform: translateY(0) scale(0.8); opacity: 0.4; }
+      40% { transform: translateY(-6px) scale(1); opacity: 1; }
+    }
+
+    /* Stream cursor */
+    .stream-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: #475569;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+      border-radius: 1px;
+      animation: cursor-blink 0.75s ease-in-out infinite;
+    }
+    @keyframes cursor-blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* Quick chips */
+    .quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .q-chip {
+      padding: 7px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.82em;
+      color: #475569;
+      background: white;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+      line-height: 1.3;
+    }
+    .q-chip:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+      background: #eef2ff;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(19,41,75,0.1);
+    }
+
+    /* ── Input area ───────────────────────────────────── */
+    .input-area {
+      border-top: 1px solid var(--border);
+      background: white;
+      padding: 14px 20px 16px;
+      flex-shrink: 0;
+    }
+    .input-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    #user-input {
+      flex: 1;
+      padding: 11px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      font-size: 0.9em;
+      font-family: inherit;
+      outline: none;
+      resize: none;
+      max-height: 100px;
+      line-height: 1.5;
+      color: var(--text);
+      background: #f8f9fb;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    }
+    #user-input:focus {
+      border-color: var(--navy);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(19,41,75,0.06);
+    }
+    #user-input::placeholder { color: #94a3b8; }
+
+    .send-btn {
+      height: 44px;
+      padding: 0 20px;
+      background: var(--navy);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-size: 0.88em;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(19,41,75,0.2);
+    }
+    .send-btn:hover:not(:disabled) {
+      background: var(--navy-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(19,41,75,0.3);
+    }
+    .send-btn:disabled { background: #cbd5e1; box-shadow: none; cursor: not-allowed; transform: none; }
+
+    .input-hint {
+      margin-top: 8px;
+      font-size: 0.72em;
+      color: #94a3b8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .input-hint a { color: var(--navy); text-decoration: none; }
+    .input-hint a:hover { text-decoration: underline; }
+    .input-hint kbd {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: 0.9em;
+      font-family: inherit;
+    }
+  </style>
 </head>
 <body>
+<div class="app">
 
-<div class="main-wrapper">
-    <div class="chat-header">BLS Virtual Advisor</div>
-    <div class="chat-container">
-        <div class="mode-bar">
-            <label>Mode:</label>
-            <select class="mode-select" id="chat-mode-select">
-                <option value="dual_agent">Dual-Agent (Retriever → Refiner)</option>
-                <option value="single_agent">Single-Agent</option>
-            </select>
-        </div>
-        <div style="padding:15px 15px 0;">
-            <div class="greeting">
-                Welcome to the University of Illinois Bachelor of Liberal Studies (BLS) information assistant!
-                Whether you are curious about tuition, transfer credits, or course flexibility, feel free to ask me anything.
-            </div>
-            <div class="examples">
-                <div class="examples-title">Example questions:</div>
-                <div class="example-question" onclick="setExample('How much does the BLS program cost?')">How much does the BLS program cost?</div>
-                <div class="example-question" onclick="setExample('I work full-time. Can I still complete this degree?')">I work full-time. Can I still complete this degree?</div>
-                <div class="example-question" onclick="setExample('What kind of classes will I take?')">What kind of classes will I take?</div>
-                <div class="example-question" onclick="setExample('How do I apply for the next semester?')">How do I apply for the next semester?</div>
-            </div>
-        </div>
-        <div class="chat-box" id="chat-box"></div>
-        <div class="input-area">
-            <input type="text" id="user-input" placeholder="Ask about tuition, transfers, courses..." onkeypress="handleEnter(event)">
-            <button onclick="sendMessage()">Send</button>
-        </div>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-logo">🎓</div>
+    <div class="topbar-text">
+      <div class="topbar-title">BLS Virtual Advisor</div>
+      <div class="topbar-sub">University of Illinois · Bachelor of Liberal Studies</div>
     </div>
+    <div class="online-badge">
+      <span class="online-dot"></span>
+      AI Online
+    </div>
+  </div>
+
+  <!-- Chat card -->
+  <div class="chat-card">
+
+    <!-- Agent pipeline status -->
+    <div id="agent-bar">
+      <div class="pipeline">
+        <div class="agent-chip chip-a" id="chip-a">
+          <span class="chip-dot"></span>
+          Agent A · Retriever
+        </div>
+        <span class="pipe-sep">→</span>
+        <div class="agent-chip chip-b" id="chip-b">
+          <span class="chip-dot"></span>
+          Agent B · Refiner
+        </div>
+      </div>
+      <div class="agent-desc" id="agent-desc">Processing your question…</div>
+    </div>
+
+    <!-- Messages -->
+    <div class="messages" id="messages"></div>
+
+    <!-- Input -->
+    <div class="input-area">
+      <div class="input-row">
+        <textarea id="user-input" rows="1" placeholder="Ask about tuition, admissions, transfer credits, concentrations…"></textarea>
+        <button class="send-btn" id="send-btn" onclick="sendMessage()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+          Send
+        </button>
+      </div>
+      <div class="input-hint">
+        <span>Need more help? <a href="mailto:onlineBLS@illinois.edu">onlineBLS@illinois.edu</a></span>
+        <span><kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for newline</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-    const chatBox = document.getElementById('chat-box');
-    const userInput = document.getElementById('user-input');
+  const msgsEl   = document.getElementById('messages');
+  const inputEl  = document.getElementById('user-input');
+  const sendBtn  = document.getElementById('send-btn');
+  const agentBar = document.getElementById('agent-bar');
+  const chipA    = document.getElementById('chip-a');
+  const chipB    = document.getElementById('chip-b');
+  const agentDesc= document.getElementById('agent-desc');
 
-    appendMessage("Hello! I am the BLS Virtual Advisor. How can I help you today?", 'bot-msg');
+  // Initial greeting
+  appendBot('Hello! I\'m the **BLS Virtual Advisor** — here to answer your questions about the **Bachelor of Liberal Studies** program at the University of Illinois.\n\nAsk me anything about tuition, transfer credits, concentrations, admissions, or how the program works.');
+  appendChips(['How much does the BLS program cost?', 'What concentrations are available?', 'I work full-time — can I still do this?', 'How do I apply for next semester?']);
 
-    function handleEnter(e) { if (e.key === 'Enter') sendMessage(); }
+  // Input resize
+  inputEl.addEventListener('input', () => {
+    inputEl.style.height = 'auto';
+    inputEl.style.height = Math.min(inputEl.scrollHeight, 100) + 'px';
+  });
+  inputEl.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
 
-    function setExample(text) {
-        userInput.value = text;
-        userInput.focus();
-    }
+  // Agent bar
+  function showAgent(agent, desc) {
+    agentBar.classList.add('visible');
+    chipA.classList.remove('is-active', 'is-done');
+    chipB.classList.remove('is-active', 'is-done');
+    agent === 'A' ? chipA.classList.add('is-active') : (chipA.classList.add('is-done'), chipB.classList.add('is-active'));
+    agentDesc.textContent = desc || 'Processing…';
+  }
+  function hideAgentBar() {
+    agentBar.classList.remove('visible');
+    chipA.classList.remove('is-active', 'is-done');
+    chipB.classList.remove('is-active', 'is-done');
+  }
 
-    function showTypingIndicator() {
-        const div = document.createElement('div');
-        div.className = 'message bot-msg typing-indicator';
-        div.innerHTML = '<span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>';
-        chatBox.appendChild(div);
-        chatBox.scrollTop = chatBox.scrollHeight;
-        return div;
-    }
+  // Send
+  async function sendMessage() {
+    const text = inputEl.value.trim();
+    if (!text || sendBtn.disabled) return;
 
-    function removeTypingIndicator(div) {
-        if (div && div.parentNode) div.parentNode.removeChild(div);
-    }
+    removeChips();
+    appendUser(text);
+    inputEl.value = '';
+    inputEl.style.height = 'auto';
+    sendBtn.disabled = true;
 
-    async function sendMessage() {
-        const text = userInput.value.trim();
-        if (!text) return;
-        const mode = document.getElementById('chat-mode-select').value;
+    const typingEl = appendTyping();
 
-        appendMessage(text, 'user-msg');
-        userInput.value = '';
-        const typingDiv = showTypingIndicator();
+    try {
+      const res = await fetch('/api/stream', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: text }),
+      });
 
-        try {
-            const res = await fetch('/api/ask', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ query: text, mode })
-            });
-            const data = await res.json();
-            removeTypingIndicator(typingDiv);
-            if (data.answer) {
-                appendMessage(marked.parse(data.answer), 'bot-msg', true);
-            } else {
-                appendMessage('Error: ' + (data.error || 'Unknown error'), 'bot-msg');
-            }
-        } catch (err) {
-            removeTypingIndicator(typingDiv);
-            appendMessage('Error connecting to server.', 'bot-msg');
+      if (!res.ok || !res.body) throw new Error();
+
+      const reader  = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buf = '', streamEl = null;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+        const lines = buf.split('\n');
+        buf = lines.pop();
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          const raw = line.slice(6).trim();
+          if (!raw) continue;
+          let ev; try { ev = JSON.parse(raw); } catch { continue; }
+
+          if (ev.type === 'agent_status') {
+            removeEl(typingEl);
+            showAgent(ev.agent, ev.message);
+          } else if (ev.type === 'answer') {
+            removeEl(typingEl);
+            hideAgentBar();
+            streamEl = appendBotStreaming(ev.content);
+          } else if (ev.type === 'done') {
+            hideAgentBar();
+          }
         }
+      }
+    } catch {
+      removeEl(typingEl);
+      hideAgentBar();
+      appendBot('I couldn\'t reach the advisor service. Please email **onlineBLS@illinois.edu** for help.');
+    } finally {
+      sendBtn.disabled = false;
+      inputEl.focus();
     }
+  }
 
-    function appendMessage(content, className, isHTML = false) {
-        const div = document.createElement('div');
-        div.className = 'message ' + className;
-        if (isHTML) div.innerHTML = content;
-        else div.textContent = content;
-        chatBox.appendChild(div);
-        chatBox.scrollTop = chatBox.scrollHeight;
+  function appendUser(text) {
+    const row = mk('div', 'msg-row user');
+    const msg = mk('div', 'message user-msg');
+    msg.textContent = text;
+    const t = mk('div', 'msg-time'); t.textContent = now();
+    row.append(msg, t);
+    msgsEl.appendChild(row);
+    scrollDown();
+  }
+
+  function appendBot(md) {
+    const row = mk('div', 'msg-row bot');
+    const msg = mk('div', 'message bot-msg');
+    msg.innerHTML = marked.parse(md);
+    const t = mk('div', 'msg-time'); t.textContent = now();
+    row.append(msg, t);
+    msgsEl.appendChild(row);
+    scrollDown();
+    return row;
+  }
+
+  function appendBotStreaming(content) {
+    const row = mk('div', 'msg-row bot');
+    const msg = mk('div', 'message bot-msg');
+    const t   = mk('div', 'msg-time'); t.textContent = now();
+    row.append(msg, t);
+    msgsEl.appendChild(row);
+
+    const chars = [...content];
+    let i = 0, acc = '';
+    function tick() {
+      if (i >= chars.length) { msg.innerHTML = marked.parse(acc); scrollDown(); return; }
+      const burst = Math.min(5, chars.length - i);
+      for (let b = 0; b < burst; b++) acc += chars[i++];
+      msg.innerHTML = marked.parse(acc) + '<span class="stream-cursor"></span>';
+      scrollDown();
+      requestAnimationFrame(tick);
     }
+    requestAnimationFrame(tick);
+    return row;
+  }
+
+  function appendTyping() {
+    const div = mk('div', 'typing-bubble');
+    div.innerHTML = '<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+    msgsEl.appendChild(div);
+    scrollDown();
+    return div;
+  }
+
+  function appendChips(qs) {
+    const wrap = mk('div', 'quick-chips'); wrap.id = 'quick-chips';
+    qs.forEach(q => {
+      const c = mk('button', 'q-chip');
+      c.textContent = q;
+      c.onclick = () => { inputEl.value = q; sendMessage(); };
+      wrap.appendChild(c);
+    });
+    msgsEl.appendChild(wrap);
+    scrollDown();
+  }
+
+  function removeChips() { const c = document.getElementById('quick-chips'); if (c) c.remove(); }
+  function removeEl(e) { if (e?.parentNode) e.parentNode.removeChild(e); }
+  function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
+  function scrollDown() { msgsEl.scrollTop = msgsEl.scrollHeight; }
+  function now() { return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); }
 </script>
-
 </body>
 </html>

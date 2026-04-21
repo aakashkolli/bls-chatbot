@@ -1,7 +1,10 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, Response, stream_with_context
 from flask_cors import CORS
+import json
+import re
 import requests
 import time
+from typing import Any, Optional
 from langchain_core.runnables import RunnableLambda
 from dotenv import load_dotenv
 load_dotenv()
@@ -16,36 +19,35 @@ import os
 # Load sensitive config from environment
 API_KEY = os.getenv("UIUC_CHAT_API_KEY")
 COURSE_NAME = os.getenv("COURSE_NAME")
-MODEL = os.getenv("MODEL", "Qwen/Qwen2.5-VL-72B-Instruct")
+MODEL = os.getenv("MODEL", "gemini-2.5-pro-exp-03-25")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-# v3: Softer, more explicit about uncertainty and decomposition
-SYSTEM_PROMPT_A_V3 = """You are Agent A (Retriever) for the University of Illinois BLS Virtual Advisor (v3).
+SYSTEM_PROMPT_A_V3 = f"""You are Agent A (Retriever) for the University of Illinois BLS Virtual Advisor.
 
 PURPOSE
-- Extract precise, document-grounded facts to support a student-facing answer. Prefer conservative, source-backed claims.
+- Extract precise, document-grounded facts only.
+- Prioritize factual recall over polished writing.
 
-RETRIEVAL & DECOMPOSITION
-1) Decompose the user query into explicit sub-questions and list them verbatim.
-2) For each sub-question, return one of: a short factual value, `NO_INFO_FOUND`, or `POSSIBLE_CONFLICT` with the conflicting values documented.
-3) When returning dates or program status, avoid guessing launch/availability; if not present, return `NO_INFO_FOUND`.
-4) If a fact is derived from multiple documents, include a `SOURCE_SUMMARY` line with document ids/titles.
-5) Never invent facts or use outside knowledge not present in the provided documents.
+RETRIEVAL APPROACH
+1) Decompose the user query into explicit sub-questions.
+2) For each sub-question, return one of: factual value, NO_INFO_FOUND, or POSSIBLE_CONFLICT with both claims.
+3) Include only facts supported by provided materials; do not use outside knowledge.
+4) For date-sensitive or frequently changing details (deadlines, key dates, concentration lists), avoid hardcoded values unless explicitly present in retrieved materials.
+5) If a detail is not clearly supported, return NO_INFO_FOUND.
 
-HIGH-RISK FIELDS (return NO_INFO_FOUND unless explicitly stated in documents)
-- Specific application deadlines (dates or date windows)
-- Transfer credit hour limits or maximums
-- Residency hour requirements (e.g., "45 of final 60 hours")
-- Maximum time to degree completion
-- Advising contact methods (e.g., text message) or check-in frequency options
-- Internship or career services program specifics
-- Program launch or availability dates
-- Concentration names or course lists (use only what documents provide; do not hardcode)
-- Internal administrative acronyms or policy names (e.g., ICT — do not surface to users)
+COMPLIANCE CONSTRAINTS
+- Do not introduce demographic targeting language (age, ethnicity, DEI framing).
+- Do not expose internal acronyms or internal administrative process labels.
+- Do not infer program launch timelines.
+- Do not infer transfer-credit limits or maximum time-to-completion values.
 
-OUTPUT FORMAT (STRICT, MACHINE-FRIENDLY)
+CANONICAL SOURCES FOR CURRENT DETAILS
+- Admissions FAQ: https://lasonline.illinois.edu/programs/bls/admissions/#faq
+- Program page: https://lasonline.illinois.edu/programs/bls/
+
+OUTPUT FORMAT
 QUESTION_BREAKDOWN:
-- [sub-question 1]
-- [sub-question 2]
+- [sub-question]
 
 FACTS_FOUND:
 - [fact: value | source]
@@ -66,50 +68,43 @@ SOURCE_SUMMARY:
 - [doc id or title : short note]
 """
 
-# v3: Softer tone, empathy scaffold, and updated guardrails
-SYSTEM_PROMPT_B_V3 = """You are Agent B (Refiner) for the University of Illinois BLS Virtual Advisor (v3).
+SYSTEM_PROMPT_B_V3 = f"""You are Agent B (Refiner) for the University of Illinois BLS Virtual Advisor.
 
 GOAL
-- Convert Agent A's structured fact pack into a concise, student-facing response that is warm, factual, and cautious about uncertainty.
+- Convert Agent A's fact pack into a concise, student-facing response that is warm, factual, and conservative.
 
-MANDATORY QA
-1) Escape every dollar sign as \\$.
-2) Remove citation artifacts and tags: <cite>, </cite>, <source>, [1], [2], etc.
-3) Remove LaTeX and math syntax: $$, \\(...\\), \\[...\\], \\times.
-4) Do not reveal internal labels (QUESTION_BREAKDOWN, FACTS_FOUND) to the end user; instead rewrite them into a short "What we can confirm" / "What we could not confirm" summary when needed.
-5) If a required fact is `NO_INFO_FOUND`, say: "I do not have that specific information from the materials provided. Please contact the BLS office at onlineBLS@illinois.edu." Do not invent alternatives.
-6) Do NOT describe courses as "self-paced." Courses are asynchronous but have deadlines. Use "online and asynchronous" instead.
-7) Do NOT mention a maximum time to degree completion (e.g., 8 years).
-8) Do NOT cite specific application deadlines or date windows — direct students to lasonline.illinois.edu/programs/bls/admissions for current dates.
-9) Do NOT claim specific advising contact methods (e.g., text messages) or check-in frequency options (weekly/monthly/semester) unless explicitly stated in source documents.
-10) Do NOT claim internship opportunities or specific career services programs unless explicitly stated in source documents.
-11) Do NOT state transfer credit hour caps or maximums (e.g., "up to 75 hours") unless explicitly in source documents.
-12) The BLS program is currently active — do NOT reference a future launch date.
-13) Do NOT reference specific demographics, ethnicities, or age groups (e.g., "ages 25–40", "Black and Latinx students"). Use neutral language such as "students with prior college experience" or "students returning to complete their degree."
-14) Use "credit hour" — never "billing hour."
-15) Do NOT use "adult learner" or "non-traditional student." Use neutral phrasing (e.g., "students with prior college experience").
-16) For advising questions, refer to the Office of Undergraduate Admissions. Do not say "BLS academic advisor," "dedicated advisor," or imply a named individual is assigned.
-17) Do NOT expose internal acronyms or administrative terms (e.g., ICT) in user-facing responses.
-18) Do NOT claim BLS is equivalent in rigor or depth to other bachelor's programs. Describe it as offering focused, interdisciplinary learning opportunities.
-19) If asked about transfer credits, acknowledge they are accepted — do not frame this as a selling point or use the phrase "transfer-credit friendly."
-20) Do NOT hardcode concentration names or lists — use only what the retrieved documents provide.
+RESPONSE RULES
+1) Do not reveal internal labels (QUESTION_BREAKDOWN, FACTS_FOUND, etc.).
+2) Remove citation artifacts and technical tags.
+3) If a required fact is NO_INFO_FOUND, say clearly that the information is not available in current materials and provide a next step.
+4) Use precise terminology: the program is online and asynchronous (not self-paced).
+5) Do not mention maximum time-to-completion.
+6) Do not hardcode deadlines or key dates; direct users to the Admissions FAQ for current details.
+7) Do not hardcode concentration lists; rely on retrieved facts, or direct users to the program page for current offerings.
+8) Use "credit hour" terminology.
+9) Use neutral, inclusive language; avoid references to age, ethnicity, or demographic targeting.
+10) Do not use "adult learner" or "non-traditional" phrasing.
+11) For advising/scheduling questions, refer to the Office of Undergraduate Admissions (do not mention text messaging workflows or assigned personal advisors unless explicitly documented).
+12) Do not expose internal acronyms or administrative details.
+13) Do not claim equivalence in rigor/depth versus other degrees; describe BLS as focused, interdisciplinary learning.
+14) If asked about transfer credit, acknowledge transfer credit is accepted when supported, without promotional framing.
+15) Do not over-advertise; keep claims proportional to verified facts.
 
-TONE & STYLE
-- Professional and warm (think: helpful advisor). Include a brief empathetic sentence when answering subjective/concerned questions (e.g., "I understand this can feel uncertain — here's what we know.").
-- When describing the target audience, use inclusive framing (e.g., "designed for transfer and reentry students") rather than exclusionary phrasing (e.g., "not for first-time freshmen").
-- When comparing BLS to other LAS majors, highlight BLS strengths only. Do not characterize other programs negatively.
-- Keep responses factual and restrained. Do not over-advertise or make claims beyond what the source documents support.
+STYLE
+- Professional, warm, restrained.
+- Keep answers concise and user-facing.
+- Prefer 2-6 bullets or a short paragraph + bullets.
 
-OUTPUT FORMAT
-- Markdown bullets or short paragraphs (2-6 bullets). Use bold for key facts. Keep answers concise but complete.
+REQUIRED LINKING FOR DYNAMIC DETAILS
+- Admissions FAQ: https://lasonline.illinois.edu/programs/bls/admissions/#faq
+- Program page: https://lasonline.illinois.edu/programs/bls/
 
 FALLBACK CONTACT
-- If contact info is missing from the documents, include: onlineBLS@illinois.edu
-
+- onlineBLS@illinois.edu
 """
 
 
-def call_uiuc_chat(system_prompt, user_content, model=None):
+def call_uiuc_chat(system_prompt: str, user_content: str, model: Optional[str] = None) -> str:
     """Call chat.illinois.edu API with free NCSA-hosted model.
     
     Args:
@@ -148,7 +143,7 @@ def call_uiuc_chat(system_prompt, user_content, model=None):
             try:
                 js = response.json()
                 # chat.illinois.edu non-streaming returns a JSON with a 'message' field
-                return js.get("message", js.get("result", response.text))
+                return str(js.get("message", js.get("result", response.text)))
             except ValueError:
                 # not JSON — return raw text so we still capture the model output
                 return response.text or ""
@@ -177,15 +172,98 @@ def call_uiuc_chat(system_prompt, user_content, model=None):
             text = response.text
         return f"Error: {response.status_code} - {text}"
 
+    return "UNKNOWN_ERROR"
+
+
+def call_gemini(system_prompt: str, user_content: str, model: str = "gemini-3-flash-preview", timeout: int = 30) -> str:
+    """Call Google's Generative Language API (generateContent)."""
+    api_key = GEMINI_API_KEY
+    if not api_key:
+        return "MISSING_GEMINI_API_KEY"
+
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    headers = {"Content-Type": "application/json", "X-goog-api-key": api_key}
+    payload = {"contents": [{"parts": [{"text": f"{system_prompt}\n\nQuestion: {user_content}\nAnswer:"}]}]}
+
+    try:
+        r = requests.post(url, json=payload, headers=headers, timeout=timeout)
+    except requests.RequestException as exc:
+        return f"API_REQUEST_FAILED: {exc}"
+
+    if r.status_code != 200:
+        try:
+            j = r.json()
+            return f"API_ERROR_{r.status_code}: {j}"
+        except Exception:
+            return f"API_ERROR_{r.status_code}: {r.text}"
+
+    try:
+        j = r.json()
+    except ValueError:
+        return r.text or ""
+
+    text = None
+    if isinstance(j, dict):
+        candidates = j.get("candidates") or j.get("outputs") or j.get("responses") or j.get("results")
+        if isinstance(candidates, list) and candidates:
+            cand = candidates[0]
+            content = cand.get("content") or cand.get("output") or cand.get("text")
+            if isinstance(content, list):
+                parts = []
+                for item in content:
+                    if isinstance(item, dict) and "text" in item and isinstance(item["text"], str):
+                        parts.append(item["text"])
+                    elif isinstance(item, str):
+                        parts.append(item)
+                if parts:
+                    text = "\n".join(parts)
+            elif isinstance(content, str):
+                text = content
+
+        if not text:
+            for k in ("message", "output", "result", "text"):
+                v = j.get(k)
+                if isinstance(v, str):
+                    text = v
+                    break
+
+    if not text:
+        def find(obj):
+            if isinstance(obj, str):
+                return obj
+            if isinstance(obj, dict):
+                for _, v in obj.items():
+                    found = find(v)
+                    if found:
+                        return found
+            if isinstance(obj, list):
+                for it in obj:
+                    found = find(it)
+                    if found:
+                        return found
+            return None
+
+        text = find(j) or json.dumps(j)
+
+    return text
+
+
+def call_model(system_prompt: str, user_content: str, model: Optional[str] = None) -> str:
+    """Dispatch to Gemini or UIUC/NCSA-hosted models by model name."""
+    _model = model if model is not None else MODEL
+    if isinstance(_model, str) and _model.lower().startswith("gemini"):
+        return call_gemini(system_prompt, user_content, model=_model)
+    return call_uiuc_chat(system_prompt, user_content, model=_model)
+
 # langchain agents
 
-def call_retriever(query: str, retriever_model: str = None) -> dict:
+def call_retriever(query: str, retriever_model: Optional[str] = None) -> dict[str, Any]:
     """Execute Agent A retrieval and return structured payload for Agent B."""
-    draft_response = call_uiuc_chat(SYSTEM_PROMPT_A_V3, query, model=retriever_model)
+    draft_response = call_model(SYSTEM_PROMPT_A_V3, query, model=retriever_model)
     return {"original_query": query, "draft_response": draft_response}
 
 
-def call_refiner(data: dict, refiner_model: str = None) -> str:
+def call_refiner(data: dict[str, Any], refiner_model: Optional[str] = None) -> str:
     """Execute Agent B refinement on Agent A output."""
     query = data["original_query"]
     draft = data["draft_response"]
@@ -196,7 +274,7 @@ Internal Draft Answer: {draft}
 
 Please refine this draft into a final response following your system constraints.
 """
-    return call_uiuc_chat(SYSTEM_PROMPT_B_V3, refinement_prompt, model=model_to_use)
+    return call_model(SYSTEM_PROMPT_B_V3, refinement_prompt, model=model_to_use)
 
 
 def return_to_user(refined_answer: str) -> str:
@@ -208,12 +286,12 @@ def agent_a_retriever(query: str) -> dict:
     print("Agent A is retrieving information...")
     return call_retriever(query)
 
-def agent_b_refiner(data: dict) -> str:
+def agent_b_refiner(data: dict[str, Any]) -> str:
     print("Agent B is refining the answer...")
     return call_refiner(data)
 
 
-def run_dual_agent(query: str, retriever_model: str = None, refiner_model: str = None) -> str:
+def run_dual_agent(query: str, retriever_model: Optional[str] = None, refiner_model: Optional[str] = None) -> str:
     """Run dual-agent pipeline with optional per-agent model overrides.
     
     Args:
@@ -283,5 +361,49 @@ def chat_widget_api():
         return jsonify({"error": str(e)}), 500
 
 
+def sanitize_user_response(text: str) -> str:
+    cleaned = text or ""
+    cleaned = re.sub(r"</?(?:cite|source)>", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"&lt;/?(?:cite|source)&gt;", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r'\s+"Citation\s*\d+"', "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\bCitation\s*\d+\b", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\b#page=\d+\b", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\bp\.\d+\b", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\b[\w\-]+\.(?:pdf|pptx|docx|txt)\b(?:,\s*p\.\d+)?", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"[ \t]{2,}", " ", cleaned)
+    cleaned = re.sub(r"\s+([,.;:])", r"\1", cleaned)
+    cleaned = re.sub(r"([,;:])\s*([,;:])", r"\2", cleaned)
+    cleaned = re.sub(r"\(\s*\)", "", cleaned)
+    cleaned = re.sub(r"\[\s*\]", "", cleaned)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned.strip()
+
+
+@app.route('/api/stream', methods=['POST'])
+def stream_chat():
+    user_data = request.json or {}
+    query = user_data.get("query", "")
+
+    if not query:
+        return jsonify({"error": "No query provided"}), 400
+
+    def generate():
+        yield f"data: {json.dumps({'type': 'agent_status', 'agent': 'A', 'message': 'Retrieving facts from BLS documents…'})}\n\n"
+        draft_payload = call_retriever(query)
+
+        yield f"data: {json.dumps({'type': 'agent_status', 'agent': 'B', 'message': 'Refining response for you…'})}\n\n"
+        refined = call_refiner(draft_payload)
+        final = sanitize_user_response(return_to_user(refined))
+
+        yield f"data: {json.dumps({'type': 'answer', 'content': final})}\n\n"
+        yield f"data: {json.dumps({'type': 'done'})}\n\n"
+
+    return Response(
+        stream_with_context(generate()),
+        mimetype="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no", "Connection": "keep-alive"},
+    )
+
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)
