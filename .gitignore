@@ -1,8 +1,9 @@
 # Ignore BLS Info folder (don't push)
 BLS Info for AI_ML Interns SP26/
 
-# Ignore all markdown files (do not push any .md files)
+# Ignore markdown files except README
 *.md
+!README.md
 
 # Common Python/OS ignores
 __pycache__/
